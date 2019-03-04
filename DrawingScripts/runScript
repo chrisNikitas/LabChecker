@@ -1,0 +1,22 @@
+#!/bin/bash
+
+i="0"
+
+rm LF31/studentImage.png 
+rm LF31/staffImage.png 
+
+rm Tootill1/studentImage.png 
+rm Tootill1/staffImage.png 
+
+python LF31/drawLF31.py 
+python Tootill1/drawTootill1.py 
+
+
+while true
+  do
+    python LF31/drawLF31.py & 
+    sleep 1
+    python Tootill1/drawTootill1.py &
+    sleep 1
+done
+
