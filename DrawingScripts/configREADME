@@ -1,0 +1,15 @@
+your config file should be of the following format:
+
+        host = 'dbhost.cs.man.ac.uk'
+        user = ''
+        passwd = ''
+        database = '2018_comp10120_w4'
+
+with your own username and password in the single quotes. 
+
+The file should be saved as 'dbconfig.py' in the same directory as the drawing
+script in order for it to work. you should add your config file to your 
+.gitignore so your credentials are kept hidden. 
+
+This file ('configFormat') should not be added to the .gitignore, as it doesn't 
+have sensitive data in it
