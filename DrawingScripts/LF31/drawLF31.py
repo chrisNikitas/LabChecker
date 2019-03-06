@@ -27,11 +27,13 @@ def diffImDrawer():
 #-------------------------------------------------------------------------------
 
   # define basic images/backgrounds and set drawing canvases
-  cS = 2000 # cS = canvasSize
-  staffImg = Image.new('RGBA', (cS,cS), color = background)
+  cS = 2000 # cS = canvasScale
+  cHeight = int(0.610*cS) # height of image
+  cWidth = int(0.810*cS) # width of image
+  staffImg = Image.new('RGBA', (cWidth,cHeight), color = background)
   staffDraw = ImageDraw.Draw(staffImg)
 
-  studentImg = Image.new('RGBA', (cS,cS), color = background)
+  studentImg = Image.new('RGBA', (cWidth,cHeight), color = background)
   studentDraw = ImageDraw.Draw(studentImg)
 
   # define line widths
@@ -42,39 +44,39 @@ def diffImDrawer():
 
   # define coordinates for easy reference:
     # horizontals:
-  a = int(0.2*cS)
-  b = int(0.4*cS)
-  c = int(0.6*cS)
-  d = int(0.8*cS)
+  a = int(0.2*cWidth)
+  b = int(0.4*cWidth)
+  c = int(0.6*cWidth)
+  d = int(0.8*cWidth)
     # verticals:
-  v = int(0.25*cS)
-  w = int(0.45*cS)
-  x = int(0.55*cS)
-  y = int(0.75*cS)
-  z = int(0.65*cS)
+  v = int(0.1*cHeight)
+  w = int(0.4*cHeight)
+  x = int(0.6*cHeight)
+  y = int(0.9*cHeight)
+  z = int(0.75*cHeight)
 
 #-------------------------------------------------------------------------------
 
   # draw lines for room outline:
-  staffDraw.line((0.1*cS,0.2*cS,0.9*cS,0.2*cS),fill=roomLines, width=wallWidth)
-  staffDraw.line((0.1*cS,0.2*cS,0.1*cS,0.8*cS),fill=roomLines, width=wallWidth)
-  staffDraw.line((0.1*cS,0.8*cS,0.7*cS,0.8*cS),fill=roomLines, width=wallWidth)
-  staffDraw.line((0.7*cS,0.8*cS,0.7*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  staffDraw.line((0.7*cS,0.5*cS,0.775*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  staffDraw.line((0.825*cS,0.5*cS,0.9*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  staffDraw.line((0.9*cS,0.5*cS,0.9*cS,0.2*cS),fill=roomLines, width=wallWidth)
+  staffDraw.line((0,0.005*cHeight,cWidth,0.005*cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0.005*cWidth,0,0.005*cWidth,cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0,0.995*cHeight,0.75*cWidth,0.995*cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0.75*cWidth,cHeight,0.75*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0.745*cWidth,0.5*cHeight,0.825*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0.925*cWidth,0.5*cHeight,cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0.995*cWidth,0.5*cHeight,0.995*cWidth,0),fill=roomLines, width=wallWidth)
 
-  studentDraw.line((0.1*cS,0.2*cS,0.9*cS,0.2*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.1*cS,0.2*cS,0.1*cS,0.8*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.1*cS,0.8*cS,0.7*cS,0.8*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.7*cS,0.8*cS,0.7*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.7*cS,0.5*cS,0.775*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.825*cS,0.5*cS,0.9*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.9*cS,0.5*cS,0.9*cS,0.2*cS),fill=roomLines, width=wallWidth)
+  studentDraw.line((0,0.005*cHeight,cWidth,0.005*cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0.005*cWidth,0,0.005*cWidth,cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0,0.995*cHeight,0.75*cWidth,0.995*cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0.75*cWidth,cHeight,0.75*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0.745*cWidth,0.5*cHeight,0.825*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0.925*cWidth,0.5*cHeight,cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0.995*cWidth,0.5*cHeight,0.995*cWidth,0),fill=roomLines, width=wallWidth)
 
   # draw lines for door:
-  staffDraw.line((0.775*cS,0.475*cS,0.825*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  studentDraw.line((0.775*cS,0.475*cS,0.825*cS,0.5*cS),fill=roomLines, width=wallWidth)
+  staffDraw.line((0.83*cWidth,0.45*cHeight,0.925*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0.83*cWidth,0.45*cHeight,0.925*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
 
 
 #-------------------------------------------------------------------------------
@@ -105,32 +107,32 @@ def diffImDrawer():
   # define int values so we can use xrange rather than using yield to write our 
   # own xrange function:
 
-  numA = int(0.2*cS)
-  numB = int(0.801*cS)
-  numC = int(0.01*cS)
-  numD = int(0.036*cS)
-  numE = int(0.025*cS)
-  numF = int(0.401*cS)
-  numG = int(0.575*cS)
-  numH = int(0.625*cS)
-  numI = int(0.6*cS)
+  numA = int(0.2*cWidth)  # first column
+  numB = int(0.801*cWidth)  # last column (limit)
+  numC = int(0.025*cHeight)   # width of one node line
+  numE = int(0.025*cWidth)
+  numF = int(0.401*cWidth)
+  numG = int(0.575*cWidth)  # third column
+  numI = int(0.6*cWidth)
+
+  nodeStep = int(0.05*cHeight) # vertical distance between node lines
 
     # for top row of computer desks:
   for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, numD):                               # for each row
+    for j in xrange(v+numC, w, nodeStep):                               # for each row
       staffDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth) 
       studentDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth) 
 
 
     # for first two columns of bottom row of computer desks:
   for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, numD):                               # for each row
+    for j in xrange(x+numC, y, nodeStep):                               # for each row
       staffDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth)
       studentDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth)
 
 
     # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, numD):                                 # for each row
+  for j in xrange(x+numC, z, nodeStep):                                 # for each row
     staffDraw.line((numG, j, numI, j),fill=computerDesks, width=tableWidth) # draw a line
     studentDraw.line((numG, j, numI, j),fill=computerDesks, width=tableWidth) # draw a line
 
@@ -144,24 +146,26 @@ def diffImDrawer():
 
     # for top row of computer desks:
   for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, numD):                               # for each row
+    for j in xrange(v+numC, w, nodeStep):                               # for each row
       nodeCoords.append((i-numE, j))                    # add node coords to array
       nodeCoords.append((i+numE, j))                    # add node coords to array
 
     # for first two columns of bottom row of computer desks:
   for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, numD):                               # for each row
+    for j in xrange(x+numC, y, nodeStep):                               # for each row
       nodeCoords.append((i-numE, j))                    # add node coords to array
       nodeCoords.append((i+numE, j))                    # add node coords to array
 
     # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, numD):                                 # for each row
+  for j in xrange(x+numC, z, nodeStep):                                 # for each row
       nodeCoords.append((numG, j))                      # add node coords to array
 
 #-------------------------------------------------------------------------------
 
   # draw nodes at each coordinate in array. colours depend on database values:
   # ellipse=((topLeftX,topLeftY,bottomRightX,bottomRightY),fill=colour,outline=colour)
+
+  nodeDiameter = int(0.013*cHeight)
 
   cursor.execute("SELECT status FROM compStatus") # point cursor to status column
 
@@ -197,16 +201,16 @@ def diffImDrawer():
       except:
         print ""
     # draw the node with the set colour:
-    staffDraw.ellipse((node[0]-numC, node[1]-numC, node[0]+numC, node[1]+numC), fill = colour, outline = (0,0,0))
+    staffDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = colour, outline = (0,0,0))
 
 
 
   # draw nodes on student image:
     if nextStatus[0] == "empty":                   # if the computer is free
-        studentDraw.ellipse((node[0]-numC, node[1]-numC, node[0]+numC, node[1]+numC), fill = nodeGreen, outline = (0,0,0))
+        studentDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = nodeGreen, outline = (0,0,0))
 
     else:
-        studentDraw.ellipse((node[0]-numC, node[1]-numC, node[0]+numC, node[1]+numC), fill = nodeRed, outline = (0,0,0))
+        studentDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = nodeRed, outline = (0,0,0))
 
 
 #-------------------------------------------------------------------------------
@@ -263,9 +267,10 @@ def sameImDrawer():
 #-------------------------------------------------------------------------------
 
   # define basic images/backgrounds and set drawing canvases
-  cS = 2000 # cS = canvasSize
-  img = Image.new('RGBA', (cS,cS), color = background)
-
+  cS = 2000 # cS = canvasScale
+  cHeight = int(0.610*cS) # height of image
+  cWidth = int(0.810*cS) # width of image
+  img = Image.new('RGBA', (cWidth,cHeight), color = background)
   draw = ImageDraw.Draw(img)
 
   # define line widths
@@ -276,26 +281,30 @@ def sameImDrawer():
 
   # define coordinates for easy reference:
     # horizontals:
-  a = int(0.2*cS)
-  b = int(0.4*cS)
-  c = int(0.6*cS)
-  d = int(0.8*cS)
+  a = int(0.2*cWidth)
+  b = int(0.4*cWidth)
+  c = int(0.6*cWidth)
+  d = int(0.8*cWidth)
     # verticals:
-  v = int(0.25*cS)
-  w = int(0.45*cS)
-  x = int(0.55*cS)
-  y = int(0.75*cS)
-  z = int(0.65*cS)
+  v = int(0.1*cHeight)
+  w = int(0.4*cHeight)
+  x = int(0.6*cHeight)
+  y = int(0.9*cHeight)
+  z = int(0.75*cHeight)
 
 #-------------------------------------------------------------------------------
 
   # draw lines for room outline:
-  draw.line((0.1*cS,0.2*cS,0.9*cS,0.2*cS),fill=roomLines, width=wallWidth)
-  draw.line((0.1*cS,0.2*cS,0.1*cS,0.8*cS),fill=roomLines, width=wallWidth)
-  draw.line((0.1*cS,0.8*cS,0.7*cS,0.8*cS),fill=roomLines, width=wallWidth)
-  draw.line((0.7*cS,0.8*cS,0.7*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  draw.line((0.7*cS,0.5*cS,0.9*cS,0.5*cS),fill=roomLines, width=wallWidth)
-  draw.line((0.9*cS,0.5*cS,0.9*cS,0.2*cS),fill=roomLines, width=wallWidth)
+  draw.line((0,0.005*cHeight,cWidth,0.005*cHeight),fill=roomLines, width=wallWidth)
+  draw.line((0.005*cWidth,0,0.005*cWidth,cHeight),fill=roomLines, width=wallWidth)
+  draw.line((0,0.995*cHeight,0.75*cWidth,0.995*cHeight),fill=roomLines, width=wallWidth)
+  draw.line((0.75*cWidth,cHeight,0.75*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  draw.line((0.745*cWidth,0.5*cHeight,0.825*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  draw.line((0.925*cWidth,0.5*cHeight,cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
+  draw.line((0.995*cWidth,0.5*cHeight,0.995*cWidth,0),fill=roomLines, width=wallWidth)
+
+  # draw lines for door:
+  draw.line((0.83*cWidth,0.45*cHeight,0.925*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
 
 
 #-------------------------------------------------------------------------------
@@ -309,7 +318,6 @@ def sameImDrawer():
   draw.line((b,x,b,y),fill=computerDesks, width=tableWidth)
   draw.line((c,x,c,z),fill=computerDesks, width=tableWidth)
 
-
 #-------------------------------------------------------------------------------
 
   # draw node lines on computer tables:
@@ -319,30 +327,30 @@ def sameImDrawer():
   # define int values so we can use xrange rather than using yield to write our 
   # own xrange function:
 
-  numA = int(0.2*cS)
-  numB = int(0.801*cS)
-  numC = int(0.01*cS)
-  numD = int(0.036*cS)
-  numE = int(0.025*cS)
-  numF = int(0.401*cS)
-  numG = int(0.575*cS)
-  numH = int(0.625*cS)
-  numI = int(0.6*cS)
+  numA = int(0.2*cWidth)  # first column
+  numB = int(0.801*cWidth)  # last column (limit)
+  numC = int(0.025*cHeight)   # width of one node line
+  numE = int(0.025*cWidth)
+  numF = int(0.401*cWidth)
+  numG = int(0.575*cWidth)  # third column
+  numI = int(0.6*cWidth)
+
+  nodeStep = int(0.05*cHeight) # vertical distance between node lines
 
     # for top row of computer desks:
   for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, numD):                               # for each row
+    for j in xrange(v+numC, w, nodeStep):                               # for each row
       draw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth) 
 
 
     # for first two columns of bottom row of computer desks:
   for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, numD):                               # for each row
+    for j in xrange(x+numC, y, nodeStep):                               # for each row
       draw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth)
 
 
     # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, numD):                                 # for each row
+  for j in xrange(x+numC, z, nodeStep):                                 # for each row
     draw.line((numG, j, numI, j),fill=computerDesks, width=tableWidth) # draw a line
 
 
@@ -355,18 +363,18 @@ def sameImDrawer():
 
     # for top row of computer desks:
   for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, numD):                               # for each row
+    for j in xrange(v+numC, w, nodeStep):                               # for each row
       nodeCoords.append((i-numE, j))                    # add node coords to array
       nodeCoords.append((i+numE, j))                    # add node coords to array
 
     # for first two columns of bottom row of computer desks:
   for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, numD):                               # for each row
+    for j in xrange(x+numC, y, nodeStep):                               # for each row
       nodeCoords.append((i-numE, j))                    # add node coords to array
       nodeCoords.append((i+numE, j))                    # add node coords to array
 
     # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, numD):                                 # for each row
+  for j in xrange(x+numC, z, nodeStep):                                 # for each row
       nodeCoords.append((numG, j))                      # add node coords to array
 
 #-------------------------------------------------------------------------------
@@ -374,41 +382,29 @@ def sameImDrawer():
   # draw nodes at each coordinate in array. colours depend on database values:
   # ellipse=((topLeftX,topLeftY,bottomRightX,bottomRightY),fill=colour,outline=colour)
 
+  nodeDiameter = int(0.013*cHeight)
+
   cursor.execute("SELECT status FROM compStatus") # point cursor to status column
 
   # define empty strings which we will give values to later:
   colour = (255,255,255)
   nextStatus = ""
 
-  noGroups = True
-  if len(desiredGroups) != 0: # if there is no lab scheduled at the current time
-    noGroups = False
 
   for node in nodeCoords:
     # calculate node colour based off of status from database:
     nextStatus = cursor.fetchone()  # this returns a tuple in which the first value is the colour of that seat
 
-    if noGroups: # if there is no lab scheduled at the current time
-      try:
-        if nextStatus[0] == "empty":                   # if the computer is free
-          colour = nodeGreen
-        else:
-          colour = nodeYellow              # if occupied by someone who shouldn't be there
-      except:
-        print ""
+    try:
+      if nextStatus[0] == "empty":                   # if the computer is free
+        colour = nodeGreen
+      else:
+        colour = nodeRed              # if occupied by someone who shouldn't be there
+    except:
+      print ""
 
-    else: # if there is a lab scheduled right now
-      try:
-        if nextStatus[0] == "empty":                   # if the computer is free
-          colour = nodeGreen
-        elif nextStatus in desiredGroups: # if occupied by desired lab group
-          colour = nodeYellow
-        else:
-          colour = nodeRed              # if occupied by someone who shouldn't be there
-      except:
-        print ""
     # draw the node with the set colour:
-    draw.ellipse((node[0]-numC, node[1]-numC, node[0]+numC, node[1]+numC), fill = colour, outline = (0,0,0))
+    draw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = colour, outline = (0,0,0))
 
 
 #-------------------------------------------------------------------------------
@@ -460,11 +456,11 @@ numOfRows = cursor.execute("SELECT COUNT(*) FROM desiredGroups")  # returns numb
 
 cursor.execute("SELECT groupName FROM desiredGroups") # points cursor to correct place
 
-for i in xrange(0, numOfRows + 1):  # for each row in desiredGroups database
-  desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
+if numOfRows > 1:
+  for i in xrange(0, numOfRows + 1):  # for each row in desiredGroups database
+    desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
 
 #-------------------------------------------------------------------------------
-
 if len(desiredGroups) == 0:
   sameImDrawer()
 else:
