@@ -1,0 +1,56 @@
+   body { 
+/*	-moz-transform: scale(1.3);
+	zoom:150%; For Chrome, IE, default 100% */
+	background-image:url("bg.png");
+	background-position: center;	
+	background-repeat: no-repeat;
+}
+
+#titleLab {
+	color: #969696;
+	font-size: 30px;
+}
+#titleChecker {
+	color: #FFFFFF;
+}
+sup {
+	font-size: smaller;
+}
+nav div .btn-dark {
+	background-color: #3E4852;
+	border-color: #3E4852;
+}
+
+/* #lab{
+ 	max-height: 600px;	 
+} */
+#list {
+  background-color: rgba(201, 178, 255, 0.5)!important
+}
+img{
+  max-width:100%;
+  max-height:100%;
+  /* margin-left: 15%; */
+}
+.active{
+
+}
+
+/* .btn-light {
+	background-color: #E0E0E0;
+	border-color: #E0E0E0;
+} */
+.bg-dark-transparent{
+	background-color: rgba(37, 42, 46, 0.884)!important;
+}
+.bg-blue-transparent{
+	background-color: rgba(61, 81, 185, 0.5)!important;
+}
+.bg-green-transparent{
+	background-color: rgba(14, 237, 163, 0.3)!important;
+}
+
+.bg-light-darker{
+	/*darker version of bg-light*/
+	background-color: rgba(247, 210, 210, 0.555);
+}
