@@ -7,7 +7,7 @@ import dbconfig as config # import our database configuration file
 #-------------------------------------------------------------------------------
 
 # define it all in a function:
-def diffImDrawer():
+def imDrawer():
 #-------------------------------------------------------------------------------
 
   # set start for time measurement:
@@ -173,44 +173,26 @@ def diffImDrawer():
   colour = (255,255,255)
   nextStatus = ""
 
-  noGroups = True
-  if len(desiredGroups) != 0: # if there is no lab scheduled at the current time
-    noGroups = False
-
   for node in nodeCoords:
     # calculate node colour based off of status from database:
     nextStatus = cursor.fetchone()  # this returns a tuple in which the first value is the colour of that seat
 
-    if noGroups: # if there is no lab scheduled at the current time
-      try:
-        if nextStatus[0] == "empty":                   # if the computer is free
-          colour = nodeGreen
-        else:
-          colour = nodeYellow              # if occupied by someone who shouldn't be there
-      except:
-        print ""
-
-    else: # if there is a lab scheduled right now
-      try:
-        if nextStatus[0] == "empty":                   # if the computer is free
-          colour = nodeGreen
-        elif nextStatus in desiredGroups: # if occupied by desired lab group
-          colour = nodeYellow
-        else:
-          colour = nodeRed              # if occupied by someone who shouldn't be there
-      except:
-        print ""
-    # draw the node with the set colour:
+    if nextStatus[0] == "empty":                   # if the computer is free
+      colour = nodeGreen
+    elif nextStatus in desiredGroups: # if occupied by desired lab group
+      colour = nodeYellow
+    else:
+      colour = nodeRed              # if occupied by someone who shouldn't be there
+  # draw the node with the set colour:
     staffDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = colour, outline = (0,0,0))
-
 
 
   # draw nodes on student image:
     if nextStatus[0] == "empty":                   # if the computer is free
-        studentDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = nodeGreen, outline = (0,0,0))
+      studentDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = nodeGreen, outline = (0,0,0))
 
     else:
-        studentDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = nodeRed, outline = (0,0,0))
+      studentDraw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = nodeRed, outline = (0,0,0))
 
 
 #-------------------------------------------------------------------------------
@@ -234,214 +216,6 @@ def diffImDrawer():
 
 
 
-
-
-
-
-
-
-
-
-
-
-#-------------------------------------------------------------------------------
-
-# define it all in a function:
-def sameImDrawer():
-#-------------------------------------------------------------------------------
-
-  # set start for time measurement:
-  start = time.time()
-
-#-------------------------------------------------------------------------------
-
-  # define colours for easy reference:
-  background = (4, 20, 45, 0)
-  roomLines = (0, 0, 120)
-  computerDesks = (100, 50, 0)
-    # node colours: 
-  nodeRed = (255, 0, 0)
-  nodeYellow = (255, 255, 0)
-  nodeGreen = (0, 255, 0)
-
-#-------------------------------------------------------------------------------
-
-  # define basic images/backgrounds and set drawing canvases
-  cS = 2000 # cS = canvasScale
-  cHeight = int(0.610*cS) # height of image
-  cWidth = int(0.810*cS) # width of image
-  img = Image.new('RGBA', (cWidth,cHeight), color = background)
-  draw = ImageDraw.Draw(img)
-
-  # define line widths
-  wallWidth = int(0.01*cS)
-  tableWidth = int(0.005*cS)
-
-#-------------------------------------------------------------------------------
-
-  # define coordinates for easy reference:
-    # horizontals:
-  a = int(0.2*cWidth)
-  b = int(0.4*cWidth)
-  c = int(0.6*cWidth)
-  d = int(0.8*cWidth)
-    # verticals:
-  v = int(0.1*cHeight)
-  w = int(0.4*cHeight)
-  x = int(0.6*cHeight)
-  y = int(0.9*cHeight)
-  z = int(0.75*cHeight)
-
-#-------------------------------------------------------------------------------
-
-  # draw lines for room outline:
-  draw.line((0,0.005*cHeight,cWidth,0.005*cHeight),fill=roomLines, width=wallWidth)
-  draw.line((0.005*cWidth,0,0.005*cWidth,cHeight),fill=roomLines, width=wallWidth)
-  draw.line((0,0.995*cHeight,0.75*cWidth,0.995*cHeight),fill=roomLines, width=wallWidth)
-  draw.line((0.75*cWidth,cHeight,0.75*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
-  draw.line((0.745*cWidth,0.5*cHeight,0.825*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
-  draw.line((0.925*cWidth,0.5*cHeight,cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
-  draw.line((0.995*cWidth,0.5*cHeight,0.995*cWidth,0),fill=roomLines, width=wallWidth)
-
-  # draw lines for door:
-  draw.line((0.83*cWidth,0.45*cHeight,0.925*cWidth,0.5*cHeight),fill=roomLines, width=wallWidth)
-
-
-#-------------------------------------------------------------------------------
-
-  # draw lines for computer tables:
-  draw.line((a,v,a,w),fill=computerDesks, width=tableWidth)
-  draw.line((b,v,b,w),fill=computerDesks, width=tableWidth)
-  draw.line((c,v,c,w),fill=computerDesks, width=tableWidth)
-  draw.line((d,v,d,w),fill=computerDesks, width=tableWidth)
-  draw.line((a,x,a,y),fill=computerDesks, width=tableWidth)
-  draw.line((b,x,b,y),fill=computerDesks, width=tableWidth)
-  draw.line((c,x,c,z),fill=computerDesks, width=tableWidth)
-
-#-------------------------------------------------------------------------------
-
-  # draw node lines on computer tables:
-  # xrange function creates iterable object rather than whole list
-  # it is therefore much more efficient and should lead to quicker drawing
-
-  # define int values so we can use xrange rather than using yield to write our 
-  # own xrange function:
-
-  numA = int(0.2*cWidth)  # first column
-  numB = int(0.801*cWidth)  # last column (limit)
-  numC = int(0.025*cHeight)   # width of one node line
-  numE = int(0.025*cWidth)
-  numF = int(0.401*cWidth)
-  numG = int(0.575*cWidth)  # third column
-  numI = int(0.6*cWidth)
-
-  nodeStep = int(0.05*cHeight) # vertical distance between node lines
-
-    # for top row of computer desks:
-  for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, nodeStep):                               # for each row
-      draw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth) 
-
-
-    # for first two columns of bottom row of computer desks:
-  for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, nodeStep):                               # for each row
-      draw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth)
-
-
-    # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, nodeStep):                                 # for each row
-    draw.line((numG, j, numI, j),fill=computerDesks, width=tableWidth) # draw a line
-
-
-#-------------------------------------------------------------------------------
-
-  # create and populate array of tuples representing node coordinates:
-  nodeCoords = []                                     # array for node coordinates
-
-  # we will reuse previously defined int values so we can use xrange
-
-    # for top row of computer desks:
-  for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, nodeStep):                               # for each row
-      nodeCoords.append((i-numE, j))                    # add node coords to array
-      nodeCoords.append((i+numE, j))                    # add node coords to array
-
-    # for first two columns of bottom row of computer desks:
-  for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, nodeStep):                               # for each row
-      nodeCoords.append((i-numE, j))                    # add node coords to array
-      nodeCoords.append((i+numE, j))                    # add node coords to array
-
-    # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, nodeStep):                                 # for each row
-      nodeCoords.append((numG, j))                      # add node coords to array
-
-#-------------------------------------------------------------------------------
-
-  # draw nodes at each coordinate in array. colours depend on database values:
-  # ellipse=((topLeftX,topLeftY,bottomRightX,bottomRightY),fill=colour,outline=colour)
-
-  nodeDiameter = int(0.013*cHeight)
-
-  cursor.execute("SELECT status FROM compStatus") # point cursor to status column
-
-  # define empty strings which we will give values to later:
-  colour = (255,255,255)
-  nextStatus = ""
-
-
-  for node in nodeCoords:
-    # calculate node colour based off of status from database:
-    nextStatus = cursor.fetchone()  # this returns a tuple in which the first value is the colour of that seat
-
-    try:
-      if nextStatus[0] == "empty":                   # if the computer is free
-        colour = nodeGreen
-      else:
-        colour = nodeRed              # if occupied by someone who shouldn't be there
-    except:
-      print ""
-
-    # draw the node with the set colour:
-    draw.ellipse((node[0]-nodeDiameter, node[1]-nodeDiameter, node[0]+nodeDiameter, node[1]+nodeDiameter), fill = colour, outline = (0,0,0))
-
-
-#-------------------------------------------------------------------------------
-
-  # save as image in current working directory:
-  img.save('staffImage.png')
-  img.save('studentImage.png')
-#-------------------------------------------------------------------------------
-  end = time.time()
-  print 'took', end - start, 'seconds to draw and save images'
-
-#-------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # connect to the database and make a cursor:
 db = MySQLdb.connect(config.host, config.user, config.passwd, config.database) 
 cursor = db.cursor()
@@ -454,17 +228,15 @@ cursor = db.cursor()
 desiredGroups = []
 numOfRows = cursor.execute("SELECT COUNT(*) FROM desiredGroups")  # returns number of desired groups
 
+print numOfRows
 cursor.execute("SELECT groupName FROM desiredGroups") # points cursor to correct place
 
-if numOfRows > 1:
-  for i in xrange(0, numOfRows + 1):  # for each row in desiredGroups database
-    desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
+for i in xrange(0, numOfRows + 1):  # for each row in desiredGroups database
+  desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
 
+print desiredGroups
 #-------------------------------------------------------------------------------
-if len(desiredGroups) == 0:
-  sameImDrawer()
-else:
-  diffImDrawer()
+imDrawer()
 
 # close database and print time taken to draw and save image
 db.close()
