@@ -167,7 +167,7 @@ def imDrawer():
 
   nodeDiameter = int(0.013*cHeight)
 
-  cursor.execute("SELECT status FROM compStatus") # point cursor to status column
+  cursor.execute("SELECT LF31 FROM compStatus") # point cursor to status column
 
   # define empty strings which we will give values to later:
   colour = (255,255,255)
@@ -229,7 +229,7 @@ desiredGroups = []
 numOfRows = cursor.execute("SELECT COUNT(*) FROM desiredGroups")  # returns number of desired groups
 
 print numOfRows
-cursor.execute("SELECT groupName FROM desiredGroups") # points cursor to correct place
+cursor.execute("SELECT LF31 FROM desiredGroups") # points cursor to correct place
 
 for i in xrange(0, numOfRows + 1):  # for each row in desiredGroups database
   desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
