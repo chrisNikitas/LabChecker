@@ -228,13 +228,10 @@ cursor = db.cursor()
 desiredGroups = []
 numOfRows = cursor.execute("SELECT COUNT(*) FROM desiredGroups")  # returns number of desired groups
 
-print numOfRows
 cursor.execute("SELECT LF31 FROM desiredGroups") # points cursor to correct place
 
-for i in xrange(0, numOfRows + 1):  # for each row in desiredGroups database
-  desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
+desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
 
-print desiredGroups
 #-------------------------------------------------------------------------------
 imDrawer()
 
