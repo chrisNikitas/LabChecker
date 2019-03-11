@@ -100,7 +100,7 @@ def imDrawer():
 
 #-------------------------------------------------------------------------------
 
-  # draw node lines on computer tables:
+  # draw node lines on computer tables and node coordinates to array:
   # xrange function creates iterable object rather than whole list
   # it is therefore much more efficient and should lead to quicker drawing
 
@@ -117,11 +117,17 @@ def imDrawer():
 
   nodeStep = int(0.05*cHeight) # vertical distance between node lines
 
+  # create and populate array of tuples representing node coordinates:
+  nodeCoords = []                                     # array for node coordinates
+
+
     # for top row of computer desks:
   for i in xrange(numA, numB, numA):                             # for each column
     for j in xrange(v+numC, w, nodeStep):                               # for each row
       staffDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth) 
       studentDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth) 
+      nodeCoords.append((i-numE, j))                    # add node coords to array
+      nodeCoords.append((i+numE, j))                    # add node coords to array
 
 
     # for first two columns of bottom row of computer desks:
@@ -129,36 +135,16 @@ def imDrawer():
     for j in xrange(x+numC, y, nodeStep):                               # for each row
       staffDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth)
       studentDraw.line((i-numE, j, i+numE, j),fill=computerDesks, width=tableWidth)
+      nodeCoords.append((i-numE, j))                    # add node coords to array
+      nodeCoords.append((i+numE, j))                    # add node coords to array
 
 
     # for final column of bottom row of computer desks:
   for j in xrange(x+numC, z, nodeStep):                                 # for each row
     staffDraw.line((numG, j, numI, j),fill=computerDesks, width=tableWidth) # draw a line
     studentDraw.line((numG, j, numI, j),fill=computerDesks, width=tableWidth) # draw a line
+    nodeCoords.append((numG, j))                      # add node coords to array
 
-
-#-------------------------------------------------------------------------------
-
-  # create and populate array of tuples representing node coordinates:
-  nodeCoords = []                                     # array for node coordinates
-
-  # we will reuse previously defined int values so we can use xrange
-
-    # for top row of computer desks:
-  for i in xrange(numA, numB, numA):                             # for each column
-    for j in xrange(v+numC, w, nodeStep):                               # for each row
-      nodeCoords.append((i-numE, j))                    # add node coords to array
-      nodeCoords.append((i+numE, j))                    # add node coords to array
-
-    # for first two columns of bottom row of computer desks:
-  for i in xrange(numA, numF, numA):                             # for each column
-    for j in xrange(x+numC, y, nodeStep):                               # for each row
-      nodeCoords.append((i-numE, j))                    # add node coords to array
-      nodeCoords.append((i+numE, j))                    # add node coords to array
-
-    # for final column of bottom row of computer desks:
-  for j in xrange(x+numC, z, nodeStep):                                 # for each row
-      nodeCoords.append((numG, j))                      # add node coords to array
 
 #-------------------------------------------------------------------------------
 

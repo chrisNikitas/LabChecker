@@ -35,7 +35,7 @@ def imDrawer():
   staffImg = Image.new('RGBA', (cWidth,cHeight), color = background)
   staffDraw = ImageDraw.Draw(staffImg)
 
-  studentImg = Image.new('RGBA', (cS,cS), color = background)
+  studentImg = Image.new('RGBA', (cWidth,cHeight), color = background)
   studentDraw = ImageDraw.Draw(studentImg)
 
   # define line widths
@@ -123,52 +123,31 @@ def imDrawer():
 
 #-------------------------------------------------------------------------------
 
-  # draw node lines on computer tables:
+  # draw node lines on computer tables and add coordinates of nodes to array:
   # xrange function creates iterable object rather than whole list
   # it is therefore much more efficient and should lead to quicker drawing
 
   # define int values so we can use xrange rather than using yield to write our 
   # own xrange function:
 
+
+
+  nodeCoords = []                                     # array for node coordinates
+
+
+
+
     # for bottom row, first column of computer desks:
   for j in xrange(numA, w, nodeStep):                             # for each row
     staffDraw.line((d, j, d+nodeWidth, j),fill=computerDesks, width=tableWidth) 
     studentDraw.line((d, j, d+nodeWidth, j),fill=computerDesks, width=tableWidth) 
+    nodeCoords.append((d+nodeWidth, j))
 
 
     # for bottom row, second column of computer desks:
   for j in xrange(numA, v, nodeStep):                               # for each row
     staffDraw.line((e-nodeWidth,j,e+nodeWidth,j),fill=computerDesks, width=tableWidth)
     studentDraw.line((e-nodeWidth,j,e+nodeWidth,j),fill=computerDesks, width=tableWidth)
-
-
-    # for two bottom right rows of computer desks:
-  for i in xrange(f,c,tableGap): # for each column
-    for j in xrange(numC, v, nodeStep):                                 # for each row
-      staffDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-      studentDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-
-
-    # for top row of computer desks:
-  for i in xrange(f,c,tableGap): # for each column
-    for j in xrange(numB, s, nodeStep):                                 # for each row
-      staffDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-      studentDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-
-
-#-------------------------------------------------------------------------------
-
-  # create and populate array of tuples representing node coordinates:
-  nodeCoords = []                                     # array for node coordinates
-
-  # we will reuse previously defined int values so we can use xrange
-
-    # for bottom row, first column of computer desks:
-  for j in xrange(numA, w, nodeStep):                             # for each row
-    nodeCoords.append((d+nodeWidth, j))
-
-    # for bottom row, second column of computer desks:
-  for j in xrange(numA, v, nodeStep):                               # for each row
     nodeCoords.append((e-nodeWidth, j))
     nodeCoords.append((e+nodeWidth, j))
 
@@ -176,15 +155,21 @@ def imDrawer():
     # for two bottom right rows of computer desks:
   for i in xrange(f,c,tableGap): # for each column
     for j in xrange(numC, v, nodeStep):                                 # for each row
+      staffDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
+      studentDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
       nodeCoords.append((i-nodeWidth, j))
       nodeCoords.append((i+nodeWidth, j))
 
 
     # for top row of computer desks:
-  for i in xrange(f, c, tableGap):                             # for each column
-    for j in xrange(numB, s, nodeStep):                               # for each row
+  for i in xrange(f,c,tableGap): # for each column
+    for j in xrange(numB, s, nodeStep):                                 # for each row
+      staffDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
+      studentDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
       nodeCoords.append((i-nodeWidth, j))                    # add node coords to array
       nodeCoords.append((i+nodeWidth, j))                    # add node coords to array
+
+
 
 #-------------------------------------------------------------------------------
 
