@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="heading">
+      Create Your Labchecker Account
+    </div>
+    <div class="form-box">
+      <form action="main%20page.php" method="post" autocomplete="off">  <!--haven't made main page-->
+        <div class="textbox">
+        Email
+        <input type="email" name="Email" pattern="[a-zA-Z.]+@student.manchester.ac.uk|[a-zA-Z.]+@manchester.ac.uk"  title="Must use univeristy email. example@student.manchester.ac.uk or example@manchester.ac.uk" Placeholder="your email here" id="Password" maxlength=128 required><br>
+        </div>
+        <div class="textbox">
+        Username
+        <input type="text" name="Username" Placeholder="your username here" id="Username" maxlength=128 required><br>
+        </div>
+        <div class="textbox">
+        Password
+        <input type="password" name="Password" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same password' : ''); if(this.checkValidity()) form.Confirm_Password.pattern = this.value;" Placeholder="your password here" id="Password" maxlength=128 required><br>
+        </div>
+        <div class="textbox">
+        Confirm Password
+        <input type="password" name="Confirm_Password" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same password' : '');" Placeholder="your password here" id="Confirm_Password" maxlength=128 required><br>
+        </div>
+        <input type="submit" class="btn" value="Sign Up">
+      </form>
+    </div>
+    <a class="footer" href="./login.html">Login Page (for testing)</a>
+  </body>
+</html>
