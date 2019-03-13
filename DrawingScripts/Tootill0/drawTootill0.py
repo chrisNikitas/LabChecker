@@ -44,80 +44,94 @@ def imDrawer():
   # define values for easy reference:
     # horizontals:
   a = int(0.005*cWidth) # 200/1000
-  b = int(0.45*cWidth) # 450/1000
-  b2 = int(0.455*cWidth) # 450/1000
+  b = int(0.6*cWidth) # 450/1000
+  b2 = b - int(0.005*cS) # 450/1000
   c = int(0.995*cWidth) # 800/1000
+
   d = int(0.05*cWidth) # 250/1000
-  e = int(0.32*cWidth) # 400/1000
-  f = int(0.59*cWidth) # 550/1000
-  g = int(0.86*cWidth) # 700/1000
+  e = int(0.25*cWidth) # 400/1000
+  f = int(0.35*cWidth) # 550/1000
+  g = int(0.55*cWidth) # 700/1000
+  h = int(0.75*cWidth) # 700/1000
 
     # verticals:
-  r = int(0.025*cHeight) # 110/1000
-  s = int(0.425*cHeight) # 440/1000
-  t = int(0.49*cHeight) # 490/1000
-  u = int(0.575*cHeight) # 560/1000
-  v = int(0.89*cHeight) # 815/1000
-  w = int(0.975*cHeight) # 890/1000
+  t = int(0.2*cHeight) # 490/1000
+  u = int(0.45*cHeight) # 560/1000
+  v = int(0.7*cHeight) # 815/1000
+  w = int(0.95*cHeight) # 890/1000
+
   x = int(0.005*cHeight) # 100/1000
   y = int(0.55*cHeight) # 550/1000
   z = int(0.995*cHeight) # 900/1000
 
     # numbers for drawing node lines:
-  numA = int(0.585*cHeight) # 575/1000
-  numB = int(0.035*cHeight) # 125/1000
-  numC = int(0.50*cHeight) # 500/1000
-  
+  numA = int(0.075*cWidth) # 575/1000
+  numB = int(0.4*cWidth) # 125/1000
+ 
     # numbers for drawing node lines:
-  nodeStep = int(0.095*cHeight) # 75/1000, vertical distance between node lines
-  nodeWidth = int(0.035*cWidth) # 25/1000, width of a node line on each side of table
-  tableGap = int(0.27*cWidth) # 150/1000
+  nodeStep = int(0.06*cWidth) # 75/1000, vertical distance between node lines
+  nodeStep2 = int(0.075*cWidth) # 75/1000, vertical distance between node lines
+
+  nodeHeight = int(0.025*cHeight) # 25/1000, height of a node line on each side of table
+  tableGap = int(0.25*cHeight) # height between desks
   nodeRadius = int(0.01*cHeight)
 
     # numbers for drawing doors:
-  doorStart = int(0.2*cWidth) # 350/1000
-  doorEnd = int(0.3*cWidth) # 400/1000
+  doorStart = int(0.25*cWidth) # 350/1000
+  doorEnd = int(0.32*cWidth) # 400/1000
   doorHeight = int(0.95*cHeight) # 850/1000
 #-------------------------------------------------------------------------------
 
   # draw lines for room outline:
-  staffDraw.line((0,y,b2,y),fill=roomLines, width=wallWidth)
+  staffDraw.line((a,0,a,cHeight),fill=roomLines, width=wallWidth)
   staffDraw.line((b,y,b,0),fill=roomLines, width=wallWidth)
-  staffDraw.line((b,x,cWidth,x),fill=roomLines, width=wallWidth)
-  staffDraw.line((c,x,c,cHeight),fill=roomLines, width=wallWidth)
+  staffDraw.line((0,x,b,x),fill=roomLines, width=wallWidth)
+  staffDraw.line((b2,y,cWidth,y),fill=roomLines, width=wallWidth)
+  staffDraw.line((c,y,c,cHeight),fill=roomLines, width=wallWidth)
   staffDraw.line((c,z,doorEnd,z),fill=roomLines, width=wallWidth)
   staffDraw.line((doorStart,z,0,z),fill=roomLines, width=wallWidth)
-  staffDraw.line((a,z,a,y),fill=roomLines, width=wallWidth)
 
-  studentDraw.line((0,y,b2,y),fill=roomLines, width=wallWidth)
+  # draw lines for room outline:
+  studentDraw.line((a,0,a,cHeight),fill=roomLines, width=wallWidth)
   studentDraw.line((b,y,b,0),fill=roomLines, width=wallWidth)
-  studentDraw.line((b,x,cWidth,x),fill=roomLines, width=wallWidth)
-  studentDraw.line((c,x,c,cHeight),fill=roomLines, width=wallWidth)
+  studentDraw.line((0,x,b,x),fill=roomLines, width=wallWidth)
+  studentDraw.line((b2,y,cWidth,y),fill=roomLines, width=wallWidth)
+  studentDraw.line((c,y,c,cHeight),fill=roomLines, width=wallWidth)
   studentDraw.line((c,z,doorEnd,z),fill=roomLines, width=wallWidth)
   studentDraw.line((doorStart,z,0,z),fill=roomLines, width=wallWidth)
-  studentDraw.line((a,z,a,y),fill=roomLines, width=wallWidth)
 
   # draw lines for door:
   staffDraw.line((doorStart,z,doorEnd,doorHeight),fill=roomLines, width=wallWidth)
   studentDraw.line((doorStart,z,doorEnd,doorHeight),fill=roomLines, width=wallWidth)
 
 #-------------------------------------------------------------------------------
-
   # draw lines for computer tables:
-  staffDraw.line((d,u,d,w),fill=computerDesks, width=tableWidth)
-  staffDraw.line((e,u,e,v),fill=computerDesks, width=tableWidth)
-  staffDraw.line((f,r,f,s),fill=computerDesks, width=tableWidth)
-  staffDraw.line((f,t,f,v),fill=computerDesks, width=tableWidth)
-  staffDraw.line((g,r,g,s),fill=computerDesks, width=tableWidth)
-  staffDraw.line((g,t,g,v),fill=computerDesks, width=tableWidth)
 
-  studentDraw.line((d,u,d,w),fill=computerDesks, width=tableWidth)
-  studentDraw.line((e,u,e,v),fill=computerDesks, width=tableWidth)
-  studentDraw.line((f,r,f,s),fill=computerDesks, width=tableWidth)
-  studentDraw.line((f,t,f,v),fill=computerDesks, width=tableWidth)
-  studentDraw.line((g,r,g,s),fill=computerDesks, width=tableWidth)
-  studentDraw.line((g,t,g,v),fill=computerDesks, width=tableWidth)
+  # left column:
+  staffDraw.line((d,t,e,t),fill=computerDesks, width=tableWidth)
+  staffDraw.line((d,u,e,u),fill=computerDesks, width=tableWidth)
+  staffDraw.line((d,v,e,v),fill=computerDesks, width=tableWidth)
+  staffDraw.line((d,w,e,w),fill=computerDesks, width=tableWidth)
 
+  studentDraw.line((d,t,e,t),fill=computerDesks, width=tableWidth)
+  studentDraw.line((d,u,e,u),fill=computerDesks, width=tableWidth)
+  studentDraw.line((d,v,e,v),fill=computerDesks, width=tableWidth)
+  studentDraw.line((d,w,e,w),fill=computerDesks, width=tableWidth)
+
+  # right column, top two rows:
+  staffDraw.line((f,t,g,t),fill=computerDesks, width=tableWidth)
+  staffDraw.line((f,u,g,u),fill=computerDesks, width=tableWidth)
+
+  studentDraw.line((f,t,g,t),fill=computerDesks, width=tableWidth)
+  studentDraw.line((f,u,g,u),fill=computerDesks, width=tableWidth)
+  
+  # right column, botttom two rows:
+  staffDraw.line((f,v,h,v),fill=computerDesks, width=tableWidth)
+  staffDraw.line((f,w,h,w),fill=computerDesks, width=tableWidth)
+
+  studentDraw.line((f,v,h,v),fill=computerDesks, width=tableWidth)
+  studentDraw.line((f,w,h,w),fill=computerDesks, width=tableWidth)
+  
 #-------------------------------------------------------------------------------
 
   # draw node lines on computer tables and add coordinates of nodes to array:
@@ -132,40 +146,46 @@ def imDrawer():
   nodeCoords = []                                     # array for node coordinates
 
 
+  # for left column except bottom desk
+  for i in xrange(numA,e,nodeStep):
+    for j in xrange(t,v+1,tableGap):
+      staffDraw.line((i, j-nodeHeight, i, j+nodeHeight),fill=computerDesks, width=tableWidth) 
+      studentDraw.line((i, j-nodeHeight, i, j+nodeHeight),fill=computerDesks, width=tableWidth) 
+      nodeCoords.append((i, j-nodeHeight))
+      nodeCoords.append((i, j+nodeHeight))
+
+  # for bottom desk in left column
+  for i in xrange(numA,e,nodeStep):
+    staffDraw.line((i, w, i, w-nodeHeight),fill=computerDesks, width=tableWidth)
+    studentDraw.line((i, w, i, w-nodeHeight),fill=computerDesks, width=tableWidth)
+    nodeCoords.append((i,w-nodeHeight))
+
+  # for right column, top two desks
+  for i in xrange(numB,g,nodeStep):
+    for j in xrange(t,u+1,tableGap):
+      staffDraw.line((i, j-nodeHeight, i, j+nodeHeight),fill=computerDesks, width=tableWidth) 
+      studentDraw.line((i, j-nodeHeight, i, j+nodeHeight),fill=computerDesks, width=tableWidth) 
+      nodeCoords.append((i, j-nodeHeight))
+      nodeCoords.append((i, j+nodeHeight))
+
+  # for right column, third desk from the top, top half
+  for i in xrange(numB,h,nodeStep):
+    staffDraw.line((i, v, i, v-nodeHeight),fill=computerDesks, width=tableWidth) 
+    studentDraw.line((i, v, i, v-nodeHeight),fill=computerDesks, width=tableWidth) 
+    nodeCoords.append((i, v-nodeHeight))
+
+  # for right column, third desk from the top, bottom half
+  for i in xrange(numB,h,nodeStep2):
+    staffDraw.line((i, v, i, v+nodeHeight),fill=computerDesks, width=tableWidth) 
+    studentDraw.line((i, v, i, v+nodeHeight),fill=computerDesks, width=tableWidth) 
+    nodeCoords.append((i, v+nodeHeight))
 
 
-    # for bottom row, first column of computer desks:
-  for j in xrange(numA, w, nodeStep):                             # for each row
-    staffDraw.line((d, j, d+nodeWidth, j),fill=computerDesks, width=tableWidth) 
-    studentDraw.line((d, j, d+nodeWidth, j),fill=computerDesks, width=tableWidth) 
-    nodeCoords.append((d+nodeWidth, j))
-
-
-    # for bottom row, second column of computer desks:
-  for j in xrange(numA, v, nodeStep):                               # for each row
-    staffDraw.line((e-nodeWidth,j,e+nodeWidth,j),fill=computerDesks, width=tableWidth)
-    studentDraw.line((e-nodeWidth,j,e+nodeWidth,j),fill=computerDesks, width=tableWidth)
-    nodeCoords.append((e-nodeWidth, j))
-    nodeCoords.append((e+nodeWidth, j))
-
-
-    # for two bottom right rows of computer desks:
-  for i in xrange(f,c,tableGap): # for each column
-    for j in xrange(numC, v, nodeStep):                                 # for each row
-      staffDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-      studentDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-      nodeCoords.append((i-nodeWidth, j))
-      nodeCoords.append((i+nodeWidth, j))
-
-
-    # for top row of computer desks:
-  for i in xrange(f,c,tableGap): # for each column
-    for j in xrange(numB, s, nodeStep):                                 # for each row
-      staffDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-      studentDraw.line((i-nodeWidth, j, i+nodeWidth, j),fill=computerDesks, width=tableWidth) # draw a line
-      nodeCoords.append((i-nodeWidth, j))                    # add node coords to array
-      nodeCoords.append((i+nodeWidth, j))                    # add node coords to array
-
+  # for right column, bottom desk
+  for i in xrange(numB,h,nodeStep):
+    staffDraw.line((i, w, i, w-nodeHeight),fill=computerDesks, width=tableWidth) 
+    studentDraw.line((i, w, i, w-nodeHeight),fill=computerDesks, width=tableWidth) 
+    nodeCoords.append((i,w-nodeHeight))
 
 
 #-------------------------------------------------------------------------------
@@ -179,9 +199,6 @@ def imDrawer():
   colour = (255,255,255)
   nextStatus = ""
 
-  noGroups = True
-  if len(desiredGroups) != 0: # if there is no lab scheduled at the current time
-    noGroups = False
 
 
   for node in nodeCoords:
@@ -189,7 +206,7 @@ def imDrawer():
     nextStatus = cursor.fetchone()  # this returns a tuple in which the first value is the colour of that seat
     nextStatus = nextStatus[0].split(",")
 
-    if nextStatus[1] == "empty":                   # if the computer is free
+    if nextStatus[2] == "empty":                   # if the computer is free
       colour = nodeGreen
     elif nextStatus in desiredGroups: # if occupied by desired lab group
       colour = nodeYellow
@@ -200,7 +217,7 @@ def imDrawer():
 
 
   # draw nodes on student image:
-    if nextStatus[1] == "empty":                   # if the computer is free
+    if nextStatus[2] == "empty":                   # if the computer is free
       studentDraw.ellipse((node[0]-nodeRadius, node[1]-nodeRadius, node[0]+nodeRadius, node[1]+nodeRadius), fill = nodeGreen, outline = (0,0,0))
 
     else:
@@ -209,12 +226,15 @@ def imDrawer():
 
 #-------------------------------------------------------------------------------
 
+###########
+  staffImg.save("test.png")
+###########
   # push staff image to db
   buffer = cStringIO.StringIO()
   staffImg.save(buffer, format="PNG")
   staff_encoded = base64.b64encode(buffer.getvalue())
 
-  command = "UPDATE base64Images SET `Tootill 1`='" + staff_encoded + "' WHERE Type='Staff'"
+  command = "UPDATE base64Images SET `Tootill 0`='" + staff_encoded + "' WHERE Type='Staff'"
   cursor.execute(command)
 
 
@@ -223,7 +243,7 @@ def imDrawer():
   studentImg.save(buffer, format="PNG")
   student_encoded = base64.b64encode(buffer.getvalue())
 
-  command = "UPDATE base64Images SET `Tootill 1`='" + student_encoded + "' WHERE Type='Student'"
+  command = "UPDATE base64Images SET `Tootill 0`='" + student_encoded + "' WHERE Type='Student'"
   cursor.execute(command)
 
 
@@ -270,7 +290,7 @@ cursor = db.cursor()
 desiredGroups = []
 numOfRows = cursor.execute("SELECT COUNT(*) FROM desiredGroups")  # returns number of desired groups
 
-cursor.execute("SELECT `Tootill 1` FROM desiredGroups") # points cursor to correct place
+cursor.execute("SELECT `Tootill 0` FROM desiredGroups") # points cursor to correct place
 
 desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
 

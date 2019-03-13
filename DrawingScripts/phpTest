@@ -1,0 +1,15 @@
+#!/bin/bash
+
+eog Tootill0Staff.png &
+eog Tootill0Student.png &
+eog Tootill1Staff.png &
+eog Tootill1Student.png &
+eog LF31Staff.png &
+eog LF31Student.png &
+
+while true
+  do
+    php -f testDecodeImage.php
+    sleep 1
+done
+

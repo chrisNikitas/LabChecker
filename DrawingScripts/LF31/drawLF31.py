@@ -151,7 +151,7 @@ def imDrawer():
 
   nodeDiameter = int(0.013*cHeight)
 
-  cursor.execute("SELECT LF31 FROM compStatus") # point cursor to status column
+  cursor.execute("SELECT labs FROM compStatus") # point cursor to status column
 
   # define empty strings which we will give values to later:
   colour = (255,255,255)
@@ -160,6 +160,7 @@ def imDrawer():
   for node in nodeCoords:
     # calculate node colour based off of status from database:
     nextStatus = cursor.fetchone()  # this returns a tuple in which the first value is the colour of that seat
+    nextStatus = nextStatus[0].split(",")
 
     if nextStatus[0] == "empty":                   # if the computer is free
       colour = nodeGreen
