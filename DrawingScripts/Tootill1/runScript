@@ -1,15 +1,5 @@
 #!/bin/bash
 
-i="0"
-
-rm studentImage.png
-rm staffImage.png
-
-python drawTootill1.py 
-
-eog studentImage.png &
-eog staffImage.png &
-
 while true
   do
   python drawTootill1.py 

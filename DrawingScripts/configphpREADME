@@ -1,0 +1,13 @@
+# YOUR PHP FILE SHOULD BE CALLED 'config.php'
+
+# IT SHOULD BE OF THE FOLLOWING FORMAT:
+
+<?php
+
+  $dbhost = "dbhost.cs.man.ac.uk";
+  $dbusername = ""; # INSERT YOUR USERNAME FOR THE DATABASE
+  $dbpassword = ""; # INSERT YOUR PASSWORD FOR THE DATABASE
+  $dbname = "2018_comp10120_w4";
+
+?>
+

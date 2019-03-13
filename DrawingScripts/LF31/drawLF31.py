@@ -4,16 +4,14 @@ import time # lets us measure time
 import MySQLdb # package used to manipulate the database with python
 import dbconfig as config # import our database configuration file
 
+import base64 # allows us to save image as base64 string file
+import cStringIO # lets us save image as string variable to save time
 #-------------------------------------------------------------------------------
 
 # define it all in a function:
 def imDrawer():
 #-------------------------------------------------------------------------------
 
-  # set start for time measurement:
-  start = time.time()
-
-#-------------------------------------------------------------------------------
 
   # define colours for easy reference:
   background = (4, 20, 45, 0)
@@ -183,23 +181,34 @@ def imDrawer():
 
 #-------------------------------------------------------------------------------
 
-  # save as image in current working directory:
-  staffImg.save('staffImage.png')
-  studentImg.save('studentImage.png')
-#-------------------------------------------------------------------------------
-  end = time.time()
-  print 'took', end - start, 'seconds to draw and save images'
+  # push staff image to db
+  buffer = cStringIO.StringIO()
+  staffImg.save(buffer, format="PNG")
+  staff_encoded = base64.b64encode(buffer.getvalue())
+
+  command = "UPDATE base64Images SET LF31='" + staff_encoded + "' WHERE Type='Staff'"
+  cursor.execute(command)
+
+
+  # push staff image to db
+  buffer = cStringIO.StringIO()
+  studentImg.save(buffer, format="PNG")
+  student_encoded = base64.b64encode(buffer.getvalue())
+
+  command = "UPDATE base64Images SET LF31='" + student_encoded + "' WHERE Type='Student'"
+  cursor.execute(command)
+
+
+  db.commit()
+
 
 #-------------------------------------------------------------------------------
 
 
+# set start for time measurement:
+start = time.time()
 
-
-
-
-
-
-
+#-------------------------------------------------------------------------------
 
 
 # connect to the database and make a cursor:
@@ -220,9 +229,28 @@ desiredGroups.append(cursor.fetchone()) # adds group name to array of desired gr
 
 #-------------------------------------------------------------------------------
 imDrawer()
-
 # close database and print time taken to draw and save image
 db.close()
+
+
+
+end = time.time()
+print 'took', end - start, 'seconds to draw and save images'
+
+#-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
