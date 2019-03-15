@@ -1,8 +1,8 @@
 body { 
-	/* background-image:url("bg.png");*/	
+	background-image:url("bg.png");	
 	background-repeat: no-repeat;
 	background-position: center;
-	background: linear-gradient(to bottom right, #029BC4,40%, #D72888 40%)
+	/* background: linear-gradient(to bottom right, #029BC4,40%, #D72888 40%) */
 }
 
 #titleLab {
@@ -47,7 +47,10 @@ img{
 	background-color: rgba(61, 81, 185, 0.5)!important;
 }
 .bg-green-transparent{
-	background-color: rgba(14, 237, 151, 0.555)!important;
+	background-color: rgba(185, 77, 167, 0.5)!important;
+	color:white;
+	/* background-color: rgba(14, 237, 237, 0.5)!important; */
+	/* background-color: rgba(237, 14, 14, 0.5)!important; */
 	/* background-color: rgba(255, 210, 22, .5)!important; */
 }
 .bg-light-transparent{
