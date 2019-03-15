@@ -24,19 +24,22 @@ return stuff to the div
 */
 
 require ("connectivity.php");
+$is_TA = TRUE;
+//$is_TA = $_SESSION['teacher'];
 
-//$is_TA = $_SESSION['TA'];
-
-$lab = $_POST['lab_name'];
+$lab = $_POST['selected_lab'];
 
 
 //if lab == a database lab
-$query = mysqli_query($con, );
+///////////////////$query = mysqli_query($con, );
 //else if lab == other database lab
 
-while ($query_row = mysqli_fetch_assoc($query)){
+/////////////////////while ($query_row = mysqli_fetch_assoc($query)){
   //echo this computer is free
-}
+/////////////////////}
+
+
+echo "<p>This form has submitted correctly</p>";
 
 
 
