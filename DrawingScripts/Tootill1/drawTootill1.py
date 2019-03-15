@@ -179,19 +179,15 @@ def imDrawer():
   colour = (255,255,255)
   nextStatus = ""
 
-  noGroups = True
-  if len(desiredGroups) != 0: # if there is no lab scheduled at the current time
-    noGroups = False
-
 
   for node in nodeCoords:
     # calculate node colour based off of status from database:
     nextStatus = cursor.fetchone()  # this returns a tuple in which the first value is the colour of that seat
     nextStatus = nextStatus[0].split(",")
-
+    
     if nextStatus[1] == "empty":                   # if the computer is free
       colour = nodeGreen
-    elif nextStatus in desiredGroups: # if occupied by desired lab group
+    elif nextStatus[1] == desiredGroup: # if occupied by desired lab group
       colour = nodeYellow
     else:
       colour = nodeRed              # if occupied by someone who shouldn't be there
@@ -267,12 +263,11 @@ cursor = db.cursor()
 
 # define array holding the groups which should be here currently by reading from database
 # this is only for the staff login though. irrelevant to students
-desiredGroups = []
 numOfRows = cursor.execute("SELECT COUNT(*) FROM desiredGroups")  # returns number of desired groups
 
 cursor.execute("SELECT `Tootill 1` FROM desiredGroups") # points cursor to correct place
 
-desiredGroups.append(cursor.fetchone()) # adds group name to array of desired groups
+desiredGroup = (cursor.fetchone())[0] # adds group name to array of desired groups
 
 #-------------------------------------------------------------------------------
 imDrawer()
