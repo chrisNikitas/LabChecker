@@ -17,7 +17,7 @@
 	</nav>
 	<div class="container-fluid bg-green-transparent">
 		<div class="row">
-			<div class="col-md-4 col-lg-3" id="list">
+			<div class="col-md-4 col-lg-3 border-right" id="list">
 				<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -33,7 +33,6 @@
 						<nav class="nav navbar rounded-bottom">
 							<div class="btn-group d-flex w-100 ">
 								<button type="button" id="button_LF31" class="btn btn-light w-100 active" onclick="SHOW_LF31()">LF31</button>
-								<button type="button" id="button_G23" class="btn btn-light w-100" onclick="SHOW_G23()">G23</button>
 								<button type="button" id="button_TOOTILL0" class="btn btn-light w-100" onclick="SHOW_TOOTILL0()">TOOTILL0</button>
 								<button type="button" id="button_TOOTILL1" class="btn btn-light w-100" onclick="SHOW_TOOTILL1()">TOOTILL1</button>
 							</div>
@@ -56,28 +55,18 @@
 	function SHOW_LF31() {
 		document.getElementById('image').src="DrawingScripts_LF31_staffImage.png";
 		document.getElementById("button_LF31").className = "btn btn-light w-100 active";
-		document.getElementById("button_G23").className = "btn btn-light w-100";
-		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
-		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
-	} 
-	function SHOW_G23() {
-		document.getElementById('image').src="ipanews_1edf12b9-7c43-4e02-8c64-89d8e2ca0f8b_1.jpeg";
-		document.getElementById("button_LF31").className = "btn btn-light w-100";
-		document.getElementById("button_G23").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 	} 
 	function SHOW_TOOTILL0() {
 		document.getElementById('image').src="otherPicture.jpg";
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
-		document.getElementById("button_G23").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 	} 
 	function SHOW_TOOTILL1() {
 		document.getElementById('image').src="DrawingScripts_Tootill1_staffImage.png";
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
-		document.getElementById("button_G23").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100 active";
 	}
