@@ -10,6 +10,6 @@ eog LF31Student.png &
 while true
   do
     php -f testDecodeImage.php
-    sleep 1
+    sleep 5
 done
 
