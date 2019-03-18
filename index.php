@@ -85,9 +85,9 @@
   function getData() {
 
 
-		//document.forms["list_form"].submit();
+		document.forms["list_form"].submit();
 		//$(document).ready(function() {
-
+/*
 		    var form = $('#list_form');
 
 		    $('list_form').submit(function(event) {
@@ -113,7 +113,7 @@
 	//});
 
 		$('list_form').trigger('submit');
-
+*/
 
 
 		//call javascript ajax for left column
