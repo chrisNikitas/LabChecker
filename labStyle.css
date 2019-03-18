@@ -15,10 +15,7 @@ body {
 sup {
 	font-size: smaller;
 }
-nav div .btn-dark {
-	background-color: #3E4852;
-	border-color: #3E4852;
-}
+
 
 #lab{
 
@@ -34,7 +31,10 @@ img{
   /* margin-left: 15%; */
 }
 .active{
-
+	font-weight: bold;
+	/* background-color: rgb(78, 187, 191)!important; */
+	background-color: #D7247B!important;
+	border-color:#D7247B!important;
 }
 
 /* .btn-light {
@@ -63,4 +63,13 @@ img{
 .bg-light-darker{
 	/*darker version of bg-light*/
 	background-color: rgba(247, 210, 210, 0.555);
+}
+.btn-group .btn {
+	font-size: 20px;
+	padding: 0px;
+	color: #f9f9f9;
+	/* background-color:#D75E4C;
+	border-color: rgb(194, 85, 68); */
+	background-color:#8325A6;
+	border-color: rgb(115, 32, 145);
 }
