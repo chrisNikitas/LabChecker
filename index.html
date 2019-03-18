@@ -96,8 +96,11 @@
 		            type        : 'POST',
 		            url         : 'checkLab.php',
 		            data        : formData,
-		            success     : function(data){
-		                $('#list').html(data);
+		            success     : //function(data){
+		                //$('#list').html(data);
+										function() {
+											alert('Hello');
+										}
 		              }
 		        })
 
