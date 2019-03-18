@@ -32,7 +32,7 @@ $is_TA = TRUE;
 
 $lab = $_POST['selected_lab'];
 
-echo "You have selected lab $lab<br>";
+echo "<h5>$lab</h5><br>";
 $array_index = 0;
 
 if ($lab == 'LF31') {
