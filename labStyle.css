@@ -42,7 +42,7 @@ img{
 }
 
 #return_pc_data_outer::-webkit-scrollbar {
-	width:5%;
+	width:50%;
 }
 
 #return_pc_data_outer::-webkit-scrollbar-thumb {
