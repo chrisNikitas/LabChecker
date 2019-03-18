@@ -20,6 +20,7 @@
 			<div class="col-md-4 col-lg-3 border-right pt-2" id="list">
 				<form id="list_form" method="POST">
 					<input type="hidden" id="hidden_selected_lab" name="hidden_selected_lab" value="LF31">
+					<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">
 				</form>
 				<h3>PC Listings</h3>
 				<hr>
@@ -56,7 +57,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--<script src="checkLab.js"></script>-->
+<script src="checkLab.js"></script>
 <script>
 
 	function SHOW_LF31() {
@@ -87,7 +88,7 @@
 
 		//document.forms["list_form"].submit();
 		//$(document).ready(function() {
-
+/*
 		    var form = $('#list_form');
 
 		    $('list_form').submit(function(event) {
@@ -113,7 +114,7 @@
 	//});
 
 		$('list_form').trigger('submit');
-
+*/
 
 
 		//call javascript ajax for left column
