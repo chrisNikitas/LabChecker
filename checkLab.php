@@ -23,11 +23,13 @@ return stuff to the div
 
 */
 
-require ("connectivity.php");
+require ("config.inc.php");
+//$con = mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 $is_TA = TRUE;
 //$is_TA = $_SESSION['teacher'];
 
-$lab = $_POST['selected_lab'];
+//////$lab = $_POST['selected_lab'];
 
 
 //if lab == a database lab
