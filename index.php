@@ -18,7 +18,7 @@
 	<div class="container-fluid bg-green-transparent">
 		<div class="row">
 			<div class="col-md-4 col-lg-3 border-right pt-2" id="list">
-				<form id="list_form" method="POST" action="checkLab.php">
+				<form id="list_form" method="POST">
 					<input type="hidden" id="hidden_selected_lab" name="hidden_selected_lab" value="LF31">
 				</form>
 				<h3>PC Listings</h3>
@@ -85,9 +85,9 @@
   function getData() {
 
 
-		document.forms["list_form"].submit();
+		//document.forms["list_form"].submit();
 		//$(document).ready(function() {
-/*
+
 		    var form = $('#list_form');
 
 		    $('list_form').submit(function(event) {
@@ -113,7 +113,7 @@
 	//});
 
 		$('list_form').trigger('submit');
-*/
+
 
 
 		//call javascript ajax for left column
