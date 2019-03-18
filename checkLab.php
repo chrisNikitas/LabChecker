@@ -33,8 +33,9 @@ $is_TA = TRUE;
 $lab = $_POST['selected_lab'];
 
 echo "You have selected lab $lab<br>";
+$array_index = 0;
 
-if ($lab == 'LF31') {
+if ($lab == "LF31") {
     $array_index = 0;
 }
 else if ($lab == 'TOOTILL1') {
