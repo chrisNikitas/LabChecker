@@ -35,7 +35,7 @@ $lab = $_POST['selected_lab'];
 echo "You have selected lab $lab<br>";
 $array_index = 0;
 
-if ($lab == "LF31") {
+if ($lab == 'LF31') {
     $array_index = 0;
 }
 else if ($lab == 'TOOTILL1') {
@@ -61,7 +61,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
     echo "TOOTILL 1 = $labs_array[1]<br>";
     echo "TOOTILL 0 = $labs_array[2]<br>";
 */
-    if ($labs_array[array_index] == 'empty') {
+    if ($labs_array[$array_index] == 'empty') {
         echo "Computer no $computerID is free<br>";
     }
 }
