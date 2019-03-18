@@ -24,15 +24,17 @@
 				</form>
 				<h3>PC Listings</h3>
 				<hr>
-				<div class="return_pc_data">
-					<ul>
-						<li>PC 3 is free</li>
-						<li>PC 5 is free</li>
-						<li>PC 13 is free</li>
-						<li>PC 25 is free</li>
-						<li>PC 4 is occupied</li>
-						<li>PC 6 is occupied</li>
-					</ul>
+				<div id="return_pc_data_outer">
+					<div class="return_pc_data">
+						<ul>
+							<li>PC 3 is free</li>
+							<li>PC 5 is free</li>
+							<li>PC 13 is free</li>
+							<li>PC 25 is free</li>
+							<li>PC 4 is occupied</li>
+							<li>PC 6 is occupied</li>
+						</ul>
+				  </div>
 			  </div>
 			</div>
 			<div class = "col-md-8 col-lg-9">
