@@ -83,8 +83,10 @@
 
 
   function getData() {
+
+
 		//document.forms["list_form"].submit();
-		$(document).ready(function() {
+		//$(document).ready(function() {
 
 		    var form = $('#list_form');
 
@@ -108,9 +110,12 @@
 		        event.preventDefault();
 
 		    });
-		});
+	//});
 
 		$('list_form').trigger('submit');
+
+
+
 		//call javascript ajax for left column
 		//^^need to make a made up form
 		//run karam's python scripts -- if possible
