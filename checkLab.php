@@ -29,7 +29,7 @@ $con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames
 $is_TA = TRUE;
 //$is_TA = $_SESSION['teacher'];
 
-//////$lab = $_POST['selected_lab'];
+/////////$lab = $_POST['selected_lab'];
 
 
 //if lab == a database lab
