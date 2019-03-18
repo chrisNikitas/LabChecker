@@ -37,6 +37,8 @@ img{
 
 #return_pc_data_outer {
 	overflow-y: scroll;
+	max-width:100%;
+	max-height:70%;
 }
 
 
