@@ -23,6 +23,8 @@ sup {
 #list {
   border-color: rgb(104, 1, 90)!important;
   border-width: 3px!important;
+  font-size: 20px;
+  line-height: 30px;
 }
 img{
   max-width:100%;
