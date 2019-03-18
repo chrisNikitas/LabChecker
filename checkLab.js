@@ -1,3 +1,4 @@
+<script>
 $(document).ready(function() {
 
     var form = $('#list_form');
@@ -21,3 +22,4 @@ $(document).ready(function() {
 
     });
 });
+</script>
