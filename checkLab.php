@@ -34,16 +34,35 @@ $lab = $_POST['selected_lab'];
 
 echo "You have selected lab $lab<br>";
 
+if ($lab == 'LF31') {
+    $array_index = 0;
+}
+else if ($lab == 'TOOTILL1') {
+    $array_index = 1;
+}
+else if ($lab == 'TOOTILL0') {
+    $array_index = 2;
+}
+else {
+    $array_index = 0;
+}
+
+
 //do this part for all - free computers
 $query = mysqli_query($con, "SELECT * FROM compStatus");
 while ($query_row = mysqli_fetch_assoc($query)){
     $computerID = $query_row['computerID'];
     $labs = $query_row['labs'];
     $labs_array = explode(',', $labs);
+/*
     echo "Comp number = $computerID<br>";
     echo "LF31 = $labs_array[0]<br>";
     echo "TOOTILL 1 = $labs_array[1]<br>";
     echo "TOOTILL 0 = $labs_array[2]<br>";
+*/
+    if ($labs_array[array_index] == 'empty') {
+        echo "Computer no $computerID is free<br>";
+    }
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
