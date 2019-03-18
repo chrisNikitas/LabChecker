@@ -62,7 +62,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
     echo "TOOTILL 0 = $labs_array[2]<br>";
 */
     if ($labs_array[$array_index] == 'empty') {
-        echo "Computer no $computerID is free<br>";
+        echo "Computer no. $computerID is free<br>";
     }
 }
 
