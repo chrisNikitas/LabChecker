@@ -32,7 +32,7 @@ $is_TA = TRUE;
 
 $lab = $_POST['selected_lab'];
 
-echo "You have selected lab $lab";
+echo "You have selected lab $lab<br>";
 
 //do this part for all - free computers
 $query = mysqli_query($con, "SELECT * FROM compStatus");
@@ -40,10 +40,10 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $computerID = $query_row['computerID'];
     $labs = $query_row['labs'];
     $labs_array = explode(',', $labs);
-    echo "Comp number = $computerID";
-    echo "LF31 = $labs_array[0]";
-    echo "TOOTILL 1 = $labs_array[1]";
-    echo "TOOTILL 0 = $labs_array[2]";
+    echo "Comp number = $computerID<br>";
+    echo "LF31 = $labs_array[0]<br>";
+    echo "TOOTILL 1 = $labs_array[1]<br>";
+    echo "TOOTILL 0 = $labs_array[2]<br>";
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
