@@ -13,7 +13,7 @@ $(document).ready(function() {
             url         : 'checkLab.php',
             data        : formData,
             success     : function(data){
-                $('.list').html(data);
+                $('.return_pc_data').html(data);
               }
         })
 
