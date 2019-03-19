@@ -96,4 +96,63 @@ $commandLF31 = escapeshellcmd('python LF31/drawLF31.py');
 $outputLF31 = shell_exec($commandLF31);
 echo "$outputLF31";
 
+$commandTootill0 = escapeshellcmd('python Tootill0/drawTootill0.py');
+$outputTootill0 = shell_exec($commandTootill0);
+echo "$outputTootill0";
+
+$commandTootill1 = escapeshellcmd('python Tootill1/drawTootill1.py');
+$outputTootill1 = shell_exec($commandTootill1);
+echo "$outputTootill1";
+
+
+sleep(5);
+
+
+
+$queryLF31Staff = "SELECT LF31 FROM base64Images WHERE Type = 'Staff'";
+$queryLF31Student = "SELECT LF31 FROM base64Images WHERE Type = 'Student'";
+$queryTootill1Staff = "SELECT `Tootill 1` FROM base64Images WHERE Type = 'Staff'";
+$queryTootill1Student = "SELECT `Tootill 1` FROM base64Images WHERE Type = 'Student'";
+$queryTootill0Staff = "SELECT `Tootill 0` FROM base64Images WHERE Type = 'Staff'";
+$queryTootill0Student = "SELECT `Tootill 0` FROM base64Images WHERE Type = 'Student'";
+
+
+$resultLF31Staff = mysqli_query($conn, $queryLF31Staff);
+$resultLF31Student = mysqli_query($conn, $queryLF31Student);
+$resultTootill1Staff = mysqli_query($conn, $queryTootill1Staff);
+$resultTootill1Student = mysqli_query($conn, $queryTootill1Student);
+$resultTootill0Staff = mysqli_query($conn, $queryTootill0Staff);
+$resultTootill0Student = mysqli_query($conn, $queryTootill0Student);
+
+
+$staffStringLF31 = array_values(mysqli_fetch_assoc($resultLF31Staff)); # numerically indexed array
+$studentStringLF31 = array_values(mysqli_fetch_assoc($resultLF31Student)); # numerically indexed array
+$staffStringTootill1 = array_values(mysqli_fetch_assoc($resultTootill1Staff)); # numerically indexed array
+$studentStringTootill1 = array_values(mysqli_fetch_assoc($resultTootill1Student)); # numerically indexed array
+$staffStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Staff)); # numerically indexed array
+$studentStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Student)); # numerically indexed array
+
+if ($lab == 'LF31') {
+    echo 'document.getElementById("image").src="base64_decode($staffStringLF31[0])"';
+}
+
+if ($lab == 'TOOTILL1') {
+    echo 'document.getElementById("image").src="base64_decode($staffStringTootill1[0])"';
+}
+
+if ($lab == 'TOOTILL0') {
+    echo 'document.getElementById("image").src="base64_decode($staffStringTootill0[0])"';
+}
+
+
+file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
+file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
+file_put_contents('Tootill1Staff.png', base64_decode($staffStringTootill1[0]));
+file_put_contents('Tootill1Student.png', base64_decode($studentStringTootill1[0]));
+file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
+file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
+
+
+
+
 ?>
