@@ -65,25 +65,28 @@
 <script>
 
 	function SHOW_LF31() {
-		document.getElementById('image').src="DrawingScripts_LF31_staffImage.png";
+		//document.getElementById('image').src="DrawingScripts_LF31_staffImage.png";
 		document.getElementById("button_LF31").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "LF31";
+		getData();
 	}
 	function SHOW_TOOTILL0() {
-		document.getElementById('image').src="otherPicture.jpg";
+		//document.getElementById('image').src="otherPicture.jpg";
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
+		getData();
 	}
 	function SHOW_TOOTILL1() {
-		document.getElementById('image').src="DrawingScripts_Tootill1_staffImage.png";
+		//document.getElementById('image').src="DrawingScripts_Tootill1_staffImage.png";
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100 active";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
+		getData();
 	}
 
 
