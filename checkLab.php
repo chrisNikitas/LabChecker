@@ -68,7 +68,10 @@ while ($query_row = mysqli_fetch_assoc($query)){
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
-echo "$desired_lab <br>";
+$desired_lab = 'MW';
+if ($desired_lab != '-') {
+    echo "<br><h6>These students should not be in the lab</h6><br>"
+}
 
 //do this part only if they are an admin - show people that shouldnt be there
 $query = mysqli_query($con, "SELECT * FROM compStatus");
@@ -92,11 +95,6 @@ while ($query_row = mysqli_fetch_assoc($query)){
 /////////////////////while ($query_row = mysqli_fetch_assoc($query)){
   //echo this computer is free
 /////////////////////}
-
-
-echo "<p>This form has submitted correctly</p>";
-
-
 
 
 ?>
