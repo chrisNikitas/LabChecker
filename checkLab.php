@@ -133,25 +133,25 @@ $staffStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Staff)); #
 $studentStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Student)); # numerically indexed array
 
 if ($lab == 'LF31') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringLF31[0])"</script>';
+    echo '<script>document.getElementById("image").src="base64_decode($staffStringLF31[0]).png"</script>';
 }
 
 if ($lab == 'TOOTILL1') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill1[0])"</script>';
+    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill1[0]).png"</script>';
 }
 
 if ($lab == 'TOOTILL0') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill0[0])"</script>';
+    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill0[0]).png"</script>';
 }
 
-
+/*
 file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
 file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
 file_put_contents('Tootill1Staff.png', base64_decode($staffStringTootill1[0]));
 file_put_contents('Tootill1Student.png', base64_decode($studentStringTootill1[0]));
 file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
 file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
-
+*/
 
 
 
