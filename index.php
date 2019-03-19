@@ -20,12 +20,13 @@
 			<div class="col-md-4 col-lg-3 border-right pt-2" id="list">
 				<form id="list_form" method="POST">
 					<input type="hidden" id="hidden_selected_lab" name="hidden_selected_lab" value="LF31">
-					<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">
+					<!--<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">-->
 				</form>
 				<h3>PC Listings</h3>
 				<hr>
 				<div id="return_pc_data_outer">
 					<div class="return_pc_data">
+						<!--
 						<ul>
 							<li>PC 3 is free</li>
 							<li>PC 5 is free</li>
@@ -34,6 +35,7 @@
 							<li>PC 4 is occupied</li>
 							<li>PC 6 is occupied</li>
 						</ul>
+					  -->
 				  </div>
 			  </div>
 			</div>
@@ -93,10 +95,6 @@
   function getData() {
 		$('#list_form').trigger("submit");
 		//document.forms["list_form"].submit();
-
-	  alert("This loop is running!");
-
-
 
 
 
