@@ -3,11 +3,7 @@ body{
   padding: 0 0;
   font-family: sans-serif;
   background: url(bg.png) no-repeat;
-  animation: anim 10s linear infinite;
-}
-
-background{
-    animation: anim 35s linear infinite;
+  animation: anim 30s linear infinite;
 }
 
 .footer {
