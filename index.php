@@ -91,11 +91,11 @@
 
 
   function getData() {
-    alert("This loop is running!");
-		//$('list_form').trigger();
-		//document.forms["list_form"].submit();
+    //alert("This loop is running!");
+		$('list_form').trigger();
+		document.forms["list_form"].submit();
 
-
+	  alert("This loop is running!");
 
     //^^^^running left column stuff automatically
 
