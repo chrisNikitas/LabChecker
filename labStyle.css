@@ -1,5 +1,5 @@
-body {
-	background-image:url("bg.png");
+body { 
+	background-image:url("bg.png");	
 	background-repeat: no-repeat;
 	background-position: center;
 	/* background: linear-gradient(to bottom right, #029BC4,40%, #D72888 40%) */
@@ -7,7 +7,7 @@ body {
 
 #titleLab {
 	color: #969696;
-	font-size: 30px;
+	font-size: 25px;
 }
 #titleChecker {
 	color: #FFFFFF;
@@ -15,10 +15,7 @@ body {
 sup {
 	font-size: smaller;
 }
-nav div .btn-dark {
-	background-color: #3E4852;
-	border-color: #3E4852;
-}
+
 
 #lab{
 
@@ -26,6 +23,8 @@ nav div .btn-dark {
 #list {
   border-color: rgb(104, 1, 90)!important;
   border-width: 3px!important;
+  font-size: 20px;
+  line-height: 30px;
 }
 img{
   max-width:100%;
@@ -33,29 +32,11 @@ img{
 
   /* margin-left: 15%; */
 }
-
-
-#return_pc_data_outer {
-	overflow-y: scroll;
-	max-width:100%;
-	/*max-height:50%;*/
-	/*max-height:calc(100vh - 20%);*/
-	max-height:calc(100vh - 200px);
-}
-
-#return_pc_data_outer::-webkit-scrollbar {
-	width:5%;
-}
-
-#return_pc_data_outer::-webkit-scrollbar-thumb {
-	background-color:white;
-}
-
-
-
-
 .active{
-
+	font-weight: bold;
+	/* background-color: rgb(78, 187, 191)!important; */
+	background-color: #D7247B!important;
+	border-color:#D7247B!important;
 }
 
 /* .btn-light {
@@ -85,6 +66,20 @@ img{
 	/*darker version of bg-light*/
 	background-color: rgba(247, 210, 210, 0.555);
 }
+.btn-group .btn {
+	font-size: 20px;
+	padding: 0px;
+	color: #f9f9f9;
+	/* background-color:#D75E4C;
+	border-color: rgb(194, 85, 68); */
+	background-color:#8325A6;
+	border-color: rgb(115, 32, 145);
+}
+
+#signOutBtn{
+	background-color: #8325A6;
+	border-color: rgb(115, 32, 145);
+}
 #return_pc_data_outer {
 	overflow-y: scroll;
 	max-width:100%;
@@ -100,5 +95,3 @@ img{
 #return_pc_data_outer::-webkit-scrollbar-thumb {
 	background-color:white;
 }
-
-
