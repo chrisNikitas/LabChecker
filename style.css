@@ -110,19 +110,19 @@ input::placeholder{
 
 @keyframes anim {
   0%{
-    background-position: 50% 80%
+    background-position: 50% 60%
   }
   25%{
-    background-position: 90% 50%
+    background-position: 90% 30%
   }
   50%{
-    background-position: 50% 20%
+    background-position: 50% 0%
   }
   75%{
-    background-position: 10% 50%
+    background-position: 10% 30%
   }
   100%{
-    background-position: 50% 80%
+    background-position: 50% 60%
   }
 }
 
