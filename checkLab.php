@@ -74,27 +74,23 @@ if ($desired_lab != '-') {
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
-$query = mysqli_query($con, "SELECT * FROM compStatus");
-while ($query_row = mysqli_fetch_assoc($query)){
-    $computerID = $query_row['computerID'];
-    $labs = $query_row['labs'];
-    $labs_array = explode(',', $labs);
+if ($is_Ta) {
+    $query = mysqli_query($con, "SELECT * FROM compStatus");
+    while ($query_row = mysqli_fetch_assoc($query)){
+        $computerID = $query_row['computerID'];
+        $labs = $query_row['labs'];
+        $labs_array = explode(',', $labs);
 
-    if ($labs_array[$array_index] != 'empty'
-        && $labs_array[$array_index] != $desired_lab
-          && $labs_array[$array_index] != ''
-            && $desired_lab != '-') {
-        echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
+        if ($labs_array[$array_index] != 'empty'
+            && $labs_array[$array_index] != $desired_lab
+              && $labs_array[$array_index] != ''
+                && $desired_lab != '-') {
+            echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
+        }
     }
 }
 
-//if lab == a database lab
-///////////////////$query = mysqli_query($con, );
-//else if lab == other database lab
-
-/////////////////////while ($query_row = mysqli_fetch_assoc($query)){
-  //echo this computer is free
-/////////////////////}
+echo "<br>";
 
 
 ?>
