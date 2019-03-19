@@ -104,7 +104,6 @@
 		//^^run karams testDecodeImage.php
 	}
 	
-  getData();
 	var keepGettingData = setInterval(getData, 5000);
 </script>
 </body>
