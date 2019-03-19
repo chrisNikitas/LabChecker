@@ -7,7 +7,7 @@ body {
 
 #titleLab {
 	color: #969696;
-	font-size: 30px;
+	font-size: 25px;
 }
 #titleChecker {
 	color: #FFFFFF;
@@ -73,5 +73,10 @@ img{
 	/* background-color:#D75E4C;
 	border-color: rgb(194, 85, 68); */
 	background-color:#8325A6;
+	border-color: rgb(115, 32, 145);
+}
+
+#signOutBtn{
+	background-color: #8325A6;
 	border-color: rgb(115, 32, 145);
 }
