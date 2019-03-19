@@ -79,7 +79,8 @@ while ($query_row = mysqli_fetch_assoc($query)){
 
     if ($labs_array[$array_index] != 'empty'
         && $labs_array[$array_index] != $desired_lab
-          && $labs_array[$array_index] != '-') {
+          && $labs_array[$array_index] != ''
+            && $desired_lab != '-') {
         echo "Student at computer no.$computerID is not in this lab<br>";
     }
 }
