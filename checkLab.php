@@ -92,5 +92,8 @@ if ($is_TA) {
 
 echo "<br>";
 
+$commandLF31 = escapeshellcmd('python LF31/drawLF31.py');
+$outputLF31 = shell_exec($command);
+echo "$outputLF31";
 
 ?>
