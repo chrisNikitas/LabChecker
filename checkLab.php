@@ -74,7 +74,7 @@ if ($desired_lab != '-') {
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
-if ($is_Ta) {
+if ($is_TA) {
     $query = mysqli_query($con, "SELECT * FROM compStatus");
     while ($query_row = mysqli_fetch_assoc($query)){
         $computerID = $query_row['computerID'];
