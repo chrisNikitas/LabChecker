@@ -121,8 +121,12 @@
 */
 
 
-		//call javascript ajax for left column
-		//^^need to make a made up form
+    //^^^^running left column stuff automatically
+
+
+
+
+
 		//run karam's python scripts -- if possible
     //wait
 		//collect Karam's image
