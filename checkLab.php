@@ -75,19 +75,21 @@ if ($desired_lab != '-') {
 
 //do this part only if they are an admin - show people that shouldnt be there
 if ($is_TA) {
-    $query = mysqli_query($con, "SELECT * FROM compStatus");
-    while ($query_row = mysqli_fetch_assoc($query)){
-        $computerID = $query_row['computerID'];
-        $labs = $query_row['labs'];
-        $labs_array = explode(',', $labs);
+  if ($desired_lab != '-') {
+      echo "<br><h6><b>These students should not be in the lab:</b></h6>";
+      $query = mysqli_query($con, "SELECT * FROM compStatus");
+      while ($query_row = mysqli_fetch_assoc($query)){
+          $computerID = $query_row['computerID'];
+          $labs = $query_row['labs'];
+          $labs_array = explode(',', $labs);
 
-        if ($labs_array[$array_index] != 'empty'
-            && $labs_array[$array_index] != $desired_lab
-              && $labs_array[$array_index] != ''
-                && $desired_lab != '-') {
-            echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
-        }
-    }
+          if ($labs_array[$array_index] != 'empty'
+              && $labs_array[$array_index] != $desired_lab
+                && $labs_array[$array_index] != ' ') {
+              echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
+          }
+      }
+  }
 }
 
 echo "<br>";
@@ -132,6 +134,24 @@ $studentStringTootill1 = array_values(mysqli_fetch_assoc($resultTootill1Student)
 $staffStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Staff)); # numerically indexed array
 $studentStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Student)); # numerically indexed array
 
+if (file_exists('LF31Staff.png')) {
+    unlink('LF31Staff.png');
+}
+if (file_exists('LF31Student.png')) {
+    unlink('LF31Student.png');
+}
+if (file_exists('Tootill1Staff.png')) {
+    unlink('Tootill1Staff.png');
+}
+if (file_exists('Tootill1Student.png')) {
+    unlink('Tootill1Student.png');
+}
+if (file_exists('Tootill0Staff.png')) {
+    unlink('Tootill0Staff.png');
+}
+if (file_exists('Tootill0Student.png')) {
+    unlink('Tootill0Student.png');
+}
 
 
 file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
