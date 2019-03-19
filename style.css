@@ -149,7 +149,7 @@ input::placeholder{
   background: none;
   color: white;
   padding: 5px;
-  border: 4px splid #ffffff;
+  border: 0px splid #ffffff;
   font-size: 18px;
   cursor: pointer;
   margin: 12px 0;
