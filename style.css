@@ -66,7 +66,7 @@ input::placeholder{
   margin: 20px 10px;
 }
 
-/* @keyframes anim {
+@keyframes anim {
   0%{
     background-position: 100% 15%;
   }
@@ -106,9 +106,9 @@ input::placeholder{
   100%{
     background-position: 100% 15%;
   }
-} */
+}
 
-@keyframes anim {
+/* @keyframes anim {
   0%{
     background-position: 0% 0%
   }
@@ -124,7 +124,7 @@ input::placeholder{
   100%{
     background-position: 0% 0%
   }
-}
+} */
 
 .btn{
   width: 100%;
