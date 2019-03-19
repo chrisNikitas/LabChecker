@@ -59,12 +59,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $computerID = $query_row['computerID'];
     $labs = $query_row['labs'];
     $labs_array = explode(',', $labs);
-/*
-    echo "Comp number = $computerID<br>";
-    echo "LF31 = $labs_array[0]<br>";
-    echo "TOOTILL 1 = $labs_array[1]<br>";
-    echo "TOOTILL 0 = $labs_array[2]<br>";
-*/
+
     if ($labs_array[$array_index] == 'empty') {
         echo "Computer no.$computerID is free<br>";
     }
@@ -73,27 +68,18 @@ while ($query_row = mysqli_fetch_assoc($query)){
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT $lab_to_query FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
-echo "///////////////////////<br>";
-echo "$desired_lab<br>";
-echo "///////////////////////<br>";
 
+$desired_lab = 'MW';
 //do this part only if they are an admin - show people that shouldnt be there
 $query = mysqli_query($con, "SELECT * FROM compStatus");
 while ($query_row = mysqli_fetch_assoc($query)){
     $computerID = $query_row['computerID'];
     $labs = $query_row['labs'];
     $labs_array = explode(',', $labs);
-/*
-    echo "Comp number = $computerID<br>";
-    echo "LF31 = $labs_array[0]<br>";
-    echo "TOOTILL 1 = $labs_array[1]<br>";
-    echo "TOOTILL 0 = $labs_array[2]<br>";
-*/
 
-/*
-    if ($labs_array[$array_index] != 'empty' && $labs_array[$array_index] != 'empty') {
-        echo "Computer no.$computerID is free<br>";
-    }*/
+    if ($labs_array[$array_index] != 'empty' && $labs_array[$array_index] != $desired_lab && $labs_array[$array_index] != '-') {
+        echo "Student at computer no.$computerID is not in this lab<br>";
+    }
 }
 
 //if lab == a database lab
