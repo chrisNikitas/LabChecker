@@ -23,8 +23,8 @@
            header("Location: index.php");
            }
           else {
-           $_POST[noResults] = "Username or password is wrong";
-           echo "<script type='text/javascript'>alert(noResults);</script>";
+           $noResults = "Username or password is wrong";
+           echo '<script type="text/javascript">alert($noResults);</script>';
            $dbConn->close();
            header("Location: Login.html");
           }
