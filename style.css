@@ -21,7 +21,7 @@ input::placeholder{
   text-shadow: 2px 2px 8px #0000007f;
 }
 
-input:-webkit-autofill{
+.textbox input:-webkit-autofill{
     -webkit-box-shadow: 0 0 0 1000px #ffffff00 inset !important;
 }
 
