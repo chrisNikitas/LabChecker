@@ -32,7 +32,7 @@ $is_TA = TRUE;
 
 $lab = $_POST['selected_lab'];
 
-echo "<h5>$lab</h5><br>";
+echo "<h5>$lab</h5>";
 $array_index = 0;
 $lab_to_query = null;
 
@@ -70,7 +70,7 @@ $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"
 $desired_lab = $lab_query[$lab_to_query];
 $desired_lab = 'MW';
 if ($desired_lab != '-') {
-    echo "<br><h6><b>These students should not be in the lab:</b></h6>";
+    echo "<br><h6><u><b>These students should not be in the lab:</b></u></h6>";
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
