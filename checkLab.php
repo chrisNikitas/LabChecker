@@ -61,7 +61,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $labs_array = explode(',', $labs);
 
     if ($labs_array[$array_index] == 'empty') {
-        echo "Computer no.$computerID is free<br>";
+        echo "Computer no.<b>$computerID</b> is free<br>";
     }
 }
 
@@ -70,7 +70,7 @@ $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"
 $desired_lab = $lab_query[$lab_to_query];
 $desired_lab = 'MW';
 if ($desired_lab != '-') {
-    echo "<br><h6>These students should not be in the lab</h6><br>";
+    echo "<br><h6><b>These students should not be in the lab:</b></h6>";
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
@@ -84,7 +84,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
         && $labs_array[$array_index] != $desired_lab
           && $labs_array[$array_index] != ''
             && $desired_lab != '-') {
-        echo "Student at computer no.$computerID is not in this lab<br>";
+        echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
     }
 }
 
