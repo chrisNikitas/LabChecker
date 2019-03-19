@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="labStyle.css">
 	</head>
 
-<body>
+<body onload="getData()">
 	<nav class="navbar navbar-light bg-dark-transparent">
 		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher</sup></a>
 		<span>
@@ -103,7 +103,7 @@
 		//collect Karam's image
 		//^^run karams testDecodeImage.php
 	}
-	
+
 	var keepGettingData = setInterval(getData, 5000);
 </script>
 </body>
