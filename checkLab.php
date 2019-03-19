@@ -68,6 +68,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
+echo "$desired_lab <br>";
 
 //do this part only if they are an admin - show people that shouldnt be there
 $query = mysqli_query($con, "SELECT * FROM compStatus");
