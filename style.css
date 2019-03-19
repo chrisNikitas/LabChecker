@@ -112,13 +112,13 @@ input::placeholder{
   0%{
     background-position: 50% 80%
   }
-  50%{
+  25%{
     background-position: 90% 50%
   }
-  100%{
+  50%{
     background-position: 50% 20%
   }
-  100%{
+  75%{
     background-position: 10% 50%
   }
   100%{
