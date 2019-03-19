@@ -10,11 +10,14 @@
 
 <body onload="getData()">
 <?
+//DONT THINK THIS WORKS
+/*
 session_start();
 if (!isset($_SESSION)) {
 	session_destroy();
 	header("Location: login.php");
 }
+*/
 ?>
 	<nav class="navbar navbar-light bg-dark-transparent">
 		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher</sup></a>
