@@ -10,11 +10,12 @@
           die("Connection failed: " . $dbConn->connect_error);
          }
          else {
-          $inputUsername = $_POST[Username];
-          $inputPassword = $_POST[Password];
+          $inputUsername = $_POST['Username'];
+          $inputPassword = $_POST['Password'];
           $sqlQuery = "SELECT Teacher, Lab Group FROM Account WHERE Username = '$inputUsername' AND Password = '$inputPassword'";
           $result = $conn->query(sqlQuery);
           if ($result->num_rows > 0) {
+           session_start();
            $_SESSION['usernameLog'] = $result["Username"];
            $_SESSION['passwordLog'] = $result["Password"];
            $_SESSION['teacherBool'] = $result["Teacher"];
