@@ -44,7 +44,7 @@ img{
 }
 
 #return_pc_data_outer::-webkit-scrollbar {
-	width:10px;
+	width:5%;
 }
 
 #return_pc_data_outer::-webkit-scrollbar-thumb {
