@@ -24,7 +24,7 @@
            }
           else {
            $noResults = "Username or password is wrong";
-           echo '<script type="text/javascript">alert($noResults);</script>';
+           echo '<script type="text/javascript">alert("Username or password is wrong");</script>';
            $dbConn->close();
            //header("Location: Login.html");
           }
