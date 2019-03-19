@@ -133,15 +133,15 @@ $staffStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Staff)); #
 $studentStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Student)); # numerically indexed array
 
 if ($lab == 'LF31') {
-    echo 'document.getElementById("image").src="base64_decode($staffStringLF31[0])"';
+    echo '<script>document.getElementById("image").src="base64_decode($staffStringLF31[0])"</script>';
 }
 
 if ($lab == 'TOOTILL1') {
-    echo 'document.getElementById("image").src="base64_decode($staffStringTootill1[0])"';
+    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill1[0])"</script>';
 }
 
 if ($lab == 'TOOTILL0') {
-    echo 'document.getElementById("image").src="base64_decode($staffStringTootill0[0])"';
+    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill0[0])"</script>';
 }
 
 
