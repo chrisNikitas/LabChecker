@@ -131,19 +131,8 @@ $staffStringTootill1 = array_values(mysqli_fetch_assoc($resultTootill1Staff)); #
 $studentStringTootill1 = array_values(mysqli_fetch_assoc($resultTootill1Student)); # numerically indexed array
 $staffStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Staff)); # numerically indexed array
 $studentStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Student)); # numerically indexed array
-/*
-if ($lab == 'LF31') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringLF31[0]).png"</script>';
-}
 
-if ($lab == 'TOOTILL1') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill1[0]).png"</script>';
-}
 
-if ($lab == 'TOOTILL0') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill0[0]).png"</script>';
-}
-*/
 
 file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
 file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
@@ -154,16 +143,25 @@ file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]
 
 
 
-if ($lab == 'LF31') {
+if ($lab == 'LF31' && $is_TA) {
     echo '<script>document.getElementById("image").src="LF31Staff.png"</script>';
 }
-
-if ($lab == 'TOOTILL1') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill1[0]).png"</script>';
+else if ($lab == 'LF31' && !$is_TA) {
+    echo '<script>document.getElementById("image").src="LF31Student.png"</script>';
 }
 
-if ($lab == 'TOOTILL0') {
-    echo '<script>document.getElementById("image").src="base64_decode($staffStringTootill0[0]).png"</script>';
+else if ($lab == 'TOOTILL1' && $is_TA) {
+    echo '<script>document.getElementById("image").src="Tootill1Staff.png"</script>';
+}
+else if ($lab == 'TOOTILL1' && !$is_TA) {
+    echo '<script>document.getElementById("image").src="Tootill1Student.png"</script>';
+}
+
+else if ($lab == 'TOOTILL0' && $is_TA) {
+    echo '<script>document.getElementById("image").src="Tootill0Staff.png"</script>';
+}
+else if ($lab == 'TOOTILL0' && !$is_TA) {
+    echo '<script>document.getElementById("image").src="Tootill0Student.png"</script>';
 }
 
 
