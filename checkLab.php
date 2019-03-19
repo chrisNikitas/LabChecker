@@ -70,7 +70,7 @@ $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"
 $desired_lab = $lab_query[$lab_to_query];
 $desired_lab = 'MW';
 if ($desired_lab != '-') {
-    echo "<br><h6>These students should not be in the lab</h6><br>"
+    echo "<br><h6>These students should not be in the lab</h6><br>";
 }
 
 //do this part only if they are an admin - show people that shouldnt be there
