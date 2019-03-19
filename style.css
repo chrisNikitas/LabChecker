@@ -22,7 +22,7 @@ input::placeholder{
 }
 
 .textbox input:-webkit-autofill{
-    -webkit-box-shadow: 0 0 0 1000px #ffffff00 inset !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
 }
 
 .heading{
