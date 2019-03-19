@@ -71,8 +71,8 @@ while ($query_row = mysqli_fetch_assoc($query)){
 }
 
 
-$lab_query = mysqli_query($con, "SELECT $lab_to_query FROM desiredGroups");
-$desired_lab = mysqli_fetch_assoc($lab_query);
+$lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT $lab_to_query FROM desiredGroups"));
+$desired_lab = $lab_query[$lab_to_query];
 echo "///////////////////////<br>";
 echo "$desired_lab<br>";
 echo "///////////////////////<br>";
