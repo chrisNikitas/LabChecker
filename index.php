@@ -91,7 +91,7 @@
 
 
   function getData() {
-		$('list_form').trigger();
+		$('list_form').trigger("submit");
 		//document.forms["list_form"].submit();
 
 	  alert("This loop is running!");
