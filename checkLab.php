@@ -52,7 +52,7 @@ else {
     $array_index = 0;
 }
 
-
+$num_free_seats = 0;
 //do this part for all - free computers
 $query = mysqli_query($con, "SELECT * FROM compStatus");
 while ($query_row = mysqli_fetch_assoc($query)){
@@ -61,22 +61,32 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $labs_array = explode(',', $labs);
 
     if ($labs_array[$array_index] == 'empty') {
-        echo "Computer no.<b>$computerID</b> is free<br>";
+        //echo "Computer no.<b>$computerID</b> is free<br>";
+        $num_free_seats++;
     }
 }
+
+if ($num_free_seats == 0) {
+    echo "There are no free seats<br>";
+}
+else if ($num_free_seats == 1) {
+    echo "There is 1 free seat<br>";
+}
+else {
+    echo "There are $num_free_seats free seats";
+}
+
 
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
 
-if ($desired_lab != '-') {
-    echo "<br><h6><b>These students should not be in the lab:</b></h6>";
-}
+
 
 //do this part only if they are an admin - show people that shouldnt be there
 if ($is_TA) {
   if ($desired_lab != '-') {
-      echo "<br><h6><b>These students should not be in the lab:</b></h6>";
+      echo "<br><h6><b>Students that shouldn't be in the lab:</b></h6>";
       $query = mysqli_query($con, "SELECT * FROM compStatus");
       while ($query_row = mysqli_fetch_assoc($query)){
           $computerID = $query_row['computerID'];
