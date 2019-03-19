@@ -117,12 +117,12 @@ $queryTootill0Staff = "SELECT `Tootill 0` FROM base64Images WHERE Type = 'Staff'
 $queryTootill0Student = "SELECT `Tootill 0` FROM base64Images WHERE Type = 'Student'";
 
 
-$resultLF31Staff = mysqli_query($conn, $queryLF31Staff);
-$resultLF31Student = mysqli_query($conn, $queryLF31Student);
-$resultTootill1Staff = mysqli_query($conn, $queryTootill1Staff);
-$resultTootill1Student = mysqli_query($conn, $queryTootill1Student);
-$resultTootill0Staff = mysqli_query($conn, $queryTootill0Staff);
-$resultTootill0Student = mysqli_query($conn, $queryTootill0Student);
+$resultLF31Staff = mysqli_query($con, $queryLF31Staff);
+$resultLF31Student = mysqli_query($con, $queryLF31Student);
+$resultTootill1Staff = mysqli_query($con, $queryTootill1Staff);
+$resultTootill1Student = mysqli_query($con, $queryTootill1Student);
+$resultTootill0Staff = mysqli_query($con, $queryTootill0Staff);
+$resultTootill0Student = mysqli_query($con, $queryTootill0Student);
 
 
 $staffStringLF31 = array_values(mysqli_fetch_assoc($resultLF31Staff)); # numerically indexed array
