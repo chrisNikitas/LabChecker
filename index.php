@@ -94,34 +94,9 @@
 
 
 		//document.forms["list_form"].submit();
-		//$(document).ready(function() {
-/*
-		    var form = $('#list_form');
 
-		    $('list_form').submit(function(event) {
+		$('list_form').trigger();
 
-		        var formData = {
-		            'selected_lab'    : $('#hidden_selected_lab').val()
-		        };
-
-		        $.ajax({
-		            type        : 'POST',
-		            url         : 'checkLab.php',
-		            data        : formData,
-		            success     : //function(data){
-		                //$('#list').html(data);
-										function() {
-											alert('Hello');
-										}
-		        })
-
-		        event.preventDefault();
-
-		    });
-	//});
-
-		$('list_form').trigger('submit');
-*/
 
 
     //^^^^running left column stuff automatically
