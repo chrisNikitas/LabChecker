@@ -13,7 +13,7 @@
           $inputUsername = $_POST['Username'];
           $inputPassword = $_POST['Password'];
           $sqlQuery = "SELECT Teacher, Lab Group FROM Account WHERE Username = '$inputUsername' AND Password = '$inputPassword'";
-          $result = $dbConn->query(sqlQuery);
+          $result = $dbConn->query($sqlQuery);
           if ($result->num_rows > 0) {
            session_start();
            $_SESSION['usernameLog'] = $result["Username"];
