@@ -94,7 +94,7 @@
 		$('#list_form').trigger("submit");
 		//document.forms["list_form"].submit();
 
-	  //alert("This loop is running!");
+	  alert("This loop is running!");
 
 
 
