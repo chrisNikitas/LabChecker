@@ -91,7 +91,7 @@ if ($is_TA) {
 }
 
 echo "<br>";
-
+/*
 $commandLF31 = escapeshellcmd('python LF31/drawLF31.py');
 $outputLF31 = shell_exec($commandLF31);
 echo "$outputLF31";
@@ -105,8 +105,8 @@ $outputTootill1 = shell_exec($commandTootill1);
 echo "$outputTootill1";
 
 
-sleep(5);
-
+sleep(3);
+*/
 
 
 $queryLF31Staff = "SELECT LF31 FROM base64Images WHERE Type = 'Staff'";
