@@ -70,7 +70,7 @@
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "LF31";
-		//getData();
+		getData();
 	}
 	function SHOW_TOOTILL0() {
 		//document.getElementById('image').src="otherPicture.jpg";
@@ -78,7 +78,7 @@
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
-		//getData();
+		getData();
 	}
 	function SHOW_TOOTILL1() {
 		//document.getElementById('image').src="DrawingScripts_Tootill1_staffImage.png";
@@ -86,14 +86,14 @@
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100 active";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
-		//getData();
+		getData();
 	}
 
 
   function getData() {
     //alert("This loop is running!");
-		$('list_form').trigger();
-		document.forms["list_form"].submit();
+		//$('list_form').trigger();
+		//document.forms["list_form"].submit();
 
 	  alert("This loop is running!");
 
@@ -109,7 +109,7 @@
 		//^^run karams testDecodeImage.php
 	}
 
-	var keepGettingData = setInterval(getData, 5000);
+	//var keepGettingData = setInterval(getData, 5000);
 </script>
 </body>
 </html>
