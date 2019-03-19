@@ -69,7 +69,6 @@ while ($query_row = mysqli_fetch_assoc($query)){
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
 
-$desired_lab = 'MW';
 //do this part only if they are an admin - show people that shouldnt be there
 $query = mysqli_query($con, "SELECT * FROM compStatus");
 while ($query_row = mysqli_fetch_assoc($query)){
@@ -77,7 +76,9 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $labs = $query_row['labs'];
     $labs_array = explode(',', $labs);
 
-    if ($labs_array[$array_index] != 'empty' && $labs_array[$array_index] != $desired_lab && $labs_array[$array_index] != '-') {
+    if ($labs_array[$array_index] != 'empty'
+        && $labs_array[$array_index] != $desired_lab
+          && $labs_array[$array_index] != '-') {
         echo "Student at computer no.$computerID is not in this lab<br>";
     }
 }
