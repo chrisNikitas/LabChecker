@@ -79,7 +79,7 @@ else {
     echo "There are $num_free_seats free seats";
 }
 
-
+echo "<br>";
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
