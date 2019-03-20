@@ -13,9 +13,9 @@
          else {
            $inputUsername = $_POST['Username'];
            $inputPassword = $_POST['Password'];
-           /*$sqlQuery = "SELECT * FROM Account WHERE Username = '$inputUsername' AND Password = '$inputPassword'";
-           $result = $dbConn->query($sqlQuery);*/
-           $query = mysqli_query($con, "SELECT * FROM Users WHERE Username = '$inputUsername' AND Password = '$inputPassword'");
+           //$sqlQuery = "SELECT * FROM Account WHERE Username = '$inputUsername' AND Password = '$inputPassword'";
+           //$result = $dbConn->query($sqlQuery);
+           $query = mysqli_query($dbConn, "SELECT * FROM Users WHERE Username = '$inputUsername' AND Password = '$inputPassword'");
            //if ($result->num_rows > 0) {
            if (mysqli_num_rows($query) != 0) {
              session_start();
