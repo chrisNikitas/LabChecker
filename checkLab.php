@@ -167,6 +167,46 @@ if (file_exists('Tootill0Student.png')) {
     //unlink('Tootill0Student.png');
 }
 */
+
+
+file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
+file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
+file_put_contents('Tootill1Staff.png', base64_decode($staffStringTootill1[0]));
+file_put_contents('Tootill1Student.png', base64_decode($studentStringTootill1[0]));
+file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
+file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
+
+
+
+if ($lab == 'LF31' && $is_TA) {
+    echo "<script>document.getElementById('image').src='LF31Staff.png?nocache=<?php echo time(); ?>';</script>";
+}
+else if ($lab == 'LF31' && !$is_TA) {
+    echo "<script>document.getElementById('image').src='LF31Student.png?nocache=<?php echo time(); ?>';</script>";
+}
+
+else if ($lab == 'TOOTILL1' && $is_TA) {
+    echo "<script>document.getElementById('image').src='Tootill1Staff.png?nocache=<?php echo time(); ?>';</script>";
+}
+else if ($lab == 'TOOTILL1' && !$is_TA) {
+    echo "<script>document.getElementById('image').src='Tootill1Student.png?nocache=<?php echo time(); ?>';</script>";
+}
+
+else if ($lab == 'TOOTILL0' && $is_TA) {
+    echo "<script>document.getElementById('image').src='Tootill0Staff.png?nocache=<?php echo time(); ?>';</script>";
+}
+else if ($lab == 'TOOTILL0' && !$is_TA) {
+    echo "<script>document.getElementById('image').src='Tootill0Student.png?nocache=<?php echo time(); ?>';</script>";
+}
+
+
+
+
+
+
+
+
+/*
 if (file_exists('LF31Staff.png')) {
     unlink('LF31Staff.png');
 }
@@ -279,6 +319,18 @@ else {
 
     $_SESSION['newFileName'] = 'image1';
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 $newFileName = $_SESSION['newFileName'];
