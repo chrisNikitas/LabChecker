@@ -25,18 +25,14 @@
              $_SESSION['teacherBool'] = $query_row["Teacher"];
              $_SESSION['labGroup'] = $query_row["LabGroup"];
 
-             $temp_username = $_SESSION['usernameLog'];
-             $temp_password = $_SESSION['passwordLog'];
-             /*echo "<script>alert('Hello');</script>";
-             echo "$temp_username";
-             echo "$temp_password";*/
              header("Location: index.php");
            }
            else {
-             $noResults = "Username or password is wrong";
-             echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
-             $dbConn->close();
-             header("Location: Login.html");
+             //$noResults = "Username or password is wrong";
+             //echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
+             //$dbConn->close();
+             //header("Location: Login.html");
+             die ('Incorrect details!');
            }
          }
 ?>
