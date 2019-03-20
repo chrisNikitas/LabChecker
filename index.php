@@ -7,7 +7,7 @@ if (isset($_SESSION['loggedIn'])) {
 	$temp_message = "Hello!!";
 }
 else {
-	//$temp_message = "Hello!!";
+	$temp_message = "Go away!!";
 	session_destroy();
 	header("Location: LoginPage.php");
 }
