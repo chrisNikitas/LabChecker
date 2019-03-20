@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?
 //DONT THINK THIS WORKS
+/*
 $temp_message = "This wasn't set";
 
 session_start();
@@ -17,7 +18,7 @@ else {
 	//session_destroy();
 	header("Location: logout.php");
 }
-
+*/
 ?>
 
 <html>
@@ -58,6 +59,23 @@ echo "$temp_message";
 				<h3>PC Listings</h3>
 				<p>
 				<?php
+				$temp_message = "This wasn't set";
+
+				session_start();
+				if (isset($_SESSION['loggedIn'])) {
+					if ($_SESSION['TeacherBool']) {
+					  $temp_message = "You are a TA!!";
+					}
+					else {
+						$temp_message = "You are just a puny student";
+					}
+				}
+				else {
+					$temp_message = "Go away!!";
+					//session_destroy();
+					header("Location: logout.php");
+				}
+
 				echo "$temp_message";
 				?>
 				</p>
