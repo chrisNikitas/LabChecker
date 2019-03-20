@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
 session_start();
-if (isset($_SESSION)) {
-  $is_it_set = "yes is set";
+if ($_SESSION['loggedIn'] == TRUE) {
+  $is_it_set = "logged in";
 }
 else {
-  $is_it_set = "no isn't set";
+  $is_it_set = "not logged in";
 }
 
 

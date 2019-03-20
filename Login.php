@@ -24,6 +24,7 @@
              $_SESSION['passwordLog'] = $query_row["Password"];
              $_SESSION['teacherBool'] = $query_row["Teacher"];
              $_SESSION['labGroup'] = $query_row["LabGroup"];
+             $_SESSION['loggedIn'] = TRUE;
 
              header("Location: index.php");
            }
@@ -31,8 +32,8 @@
              //$noResults = "Username or password is wrong";
              //echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
              //$dbConn->close();
-             //header("Location: Login.html");
-             die ('Incorrect details!');
+             header("Location: LoginPage.php");
+             //die ('Incorrect details!');
            }
          }
 ?>
