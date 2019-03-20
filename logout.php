@@ -3,6 +3,6 @@
 session_start();
 unset($_SESSION);
 session_destroy();
-header("Location: Login.html");
+header("Location: LoginPage.html");
 
 ?>
