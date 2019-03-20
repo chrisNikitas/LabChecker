@@ -62,7 +62,7 @@ $noOfStudentsNotInLab = 0;
 //do this part only if they are an admin - show people that shouldnt be there
 if ($is_TA) {
   if ($desired_lab != '-') {
-      echo "<br><hr><br><h5><b>Students that shouldn't be in the lab:</b></h5>";
+      echo "<br><hr><br><h6><b>Students that shouldn't be in the lab:</b></h6>";
       $query = mysqli_query($con, "SELECT * FROM compStatus");
       while ($query_row = mysqli_fetch_assoc($query)){
           $computerID = $query_row['computerID'];
