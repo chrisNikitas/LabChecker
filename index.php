@@ -15,6 +15,7 @@ else {
 	header("Location: logout.php");
 }
 
+$_SESSION['newFileName'] = 1;
 ?>
 
 
