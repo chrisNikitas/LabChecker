@@ -67,7 +67,6 @@ if ($is_TA) {
       echo "<h6><b>Students that shouldn't be in the lab:</b></h6>";
       $query = mysqli_query($con, "SELECT * FROM compStatus");
       while ($query_row = mysqli_fetch_assoc($query)){
-          echo "<br>";
           $computerID = $query_row['computerID'];
           $labs = $query_row['labs'];
           $labs_array = explode(',', $labs);
@@ -75,7 +74,7 @@ if ($is_TA) {
           if ($labs_array[$array_index] != 'empty'
               && $labs_array[$array_index] != $desired_lab
                 && $labs_array[$array_index] != ' ') {
-              echo "Student at computer no.<b>$computerID</b> is not in this lab";
+              echo "<br>Student at computer no.<b>$computerID</b> is not in this lab";
               $noOfStudentsNotInLab++;
           }
       }
@@ -167,6 +166,45 @@ if (file_exists('Tootill0Student.png')) {
     $newFileName = 'Tootill0Student2.png';
     //unlink('Tootill0Student.png');
 }
+*/
+if (file_exists('LF31Staff.png')) {
+    unlink('LF31Staff.png');
+}
+if (file_exists('LF31Student.png')) {
+    unlink('LF31Student.png');
+}
+if (file_exists('Tootill1Staff.png')) {
+    unlink('Tootill1Staff.png');
+}
+if (file_exists('Tootill1Student.png')) {
+    unlink('Tootill1Student.png');
+}
+if (file_exists('Tootill0Staff.png')) {
+    unlink('Tootill0Staff.png');
+}
+if (file_exists('Tootill0Student.png')) {
+    unlink('Tootill0Student.png');
+}
+
+
+if (file_exists('LF31Staff2.png')) {
+    unlink('LF31Staff2.png');
+}
+if (file_exists('LF31Student2.png')) {
+    unlink('LF31Student2.png');
+}
+if (file_exists('Tootill1Staff2.png')) {
+    unlink('Tootill1Staff2.png');
+}
+if (file_exists('Tootill1Student2.png')) {
+    unlink('Tootill1Student2.png');
+}
+if (file_exists('Tootill0Staff2.png')) {
+    unlink('Tootill0Staff2.png');
+}
+if (file_exists('Tootill0Student2.png')) {
+    unlink('Tootill0Student2.png');
+}
 
 if ($_SESSION['newFileName'] == 'image1') {
 
@@ -241,8 +279,8 @@ else {
 
     $_SESSION['newFileName'] = 'image1';
 }
-*/
 
+/*
 $newFileName = $_SESSION['newFileName'];
 
 file_put_contents("LF31Staff$newFileName.png", base64_decode($staffStringLF31[0]));
@@ -278,6 +316,6 @@ else if ($lab == 'TOOTILL0' && !$is_TA) {
 
 $_SESSION['newFileName'] = $newFileName + 1;
 
-
+*/
 
 ?>
