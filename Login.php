@@ -17,7 +17,7 @@
            $result = $dbConn->query($sqlQuery);*/
            $query = mysqli_query($con, "SELECT * FROM Users WHERE Username = '$inputUsername' AND Password = '$inputPassword'");
            //if ($result->num_rows > 0) {
-           if (mysqli_num_rows($query) > 0) {
+           if (mysqli_num_rows($query) != 0) {
              session_start();
              $_SESSION['usernameLog'] = $result["Username"];
              $_SESSION['passwordLog'] = $result["Password"];
