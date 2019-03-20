@@ -141,56 +141,105 @@ $studentStringTootill1 = array_values(mysqli_fetch_assoc($resultTootill1Student)
 $staffStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Staff)); # numerically indexed array
 $studentStringTootill0 = array_values(mysqli_fetch_assoc($resultTootill0Student)); # numerically indexed array
 
+//$newFileName = '';
+
 if (file_exists('LF31Staff.png')) {
-    unlink('LF31Staff.png');
+    $newFileName = 'LF31Staff2.png';
+    //unlink('LF31Staff.png');
 }
 if (file_exists('LF31Student.png')) {
-    unlink('LF31Student.png');
+    $newFileName = 'LF31Student2.png';
+    //unlink('LF31Student.png');
 }
 if (file_exists('Tootill1Staff.png')) {
-    unlink('Tootill1Staff.png');
+    $newFileName = 'Tootill1Staff2.png';
+    //unlink('Tootill1Staff.png');
 }
 if (file_exists('Tootill1Student.png')) {
-    unlink('Tootill1Student.png');
+    $newFileName = 'Tootill1Student2.png';
+    //unlink('Tootill1Student.png');
 }
 if (file_exists('Tootill0Staff.png')) {
-    unlink('Tootill0Staff.png');
+    $newFileName = 'Tootill0Staff2.png';
+    //unlink('Tootill0Staff.png');
 }
 if (file_exists('Tootill0Student.png')) {
-    unlink('Tootill0Student.png');
+    $newFileName = 'Tootill0Student2.png';
+    //unlink('Tootill0Student.png');
 }
 
+if ($_SESSION['newFileName'] = 'image1') {
 
-file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
-file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
-file_put_contents('Tootill1Staff.png', base64_decode($staffStringTootill1[0]));
-file_put_contents('Tootill1Student.png', base64_decode($studentStringTootill1[0]));
-file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
-file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
+    file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
+    file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
+    file_put_contents('Tootill1Staff.png', base64_decode($staffStringTootill1[0]));
+    file_put_contents('Tootill1Student.png', base64_decode($studentStringTootill1[0]));
+    file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
+    file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
 
 
-/*
-if ($lab == 'LF31' && $is_TA) {
-    echo "<script>document.getElementById('image').src='LF31Staff.png';</script>";
-}
-else if ($lab == 'LF31' && !$is_TA) {
-    echo "<script>document.getElementById('image').src='LF31Student.png';</script>";
+
+    if ($lab == 'LF31' && $is_TA) {
+        echo "<script>document.getElementById('image').src='LF31Staff.png';</script>";
+    }
+    else if ($lab == 'LF31' && !$is_TA) {
+        echo "<script>document.getElementById('image').src='LF31Student.png';</script>";
+    }
+
+    else if ($lab == 'TOOTILL1' && $is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill1Staff.png';</script>";
+    }
+    else if ($lab == 'TOOTILL1' && !$is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill1Student.png';</script>";
+    }
+
+    else if ($lab == 'TOOTILL0' && $is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill0Staff.png';</script>";
+    }
+    else if ($lab == 'TOOTILL0' && !$is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill0Student.png';</script>";
+    }
+
+
+
+    $_SESSION['newFileName'] = 'image2';
 }
 
-else if ($lab == 'TOOTILL1' && $is_TA) {
-    echo "<script>document.getElementById('image').src='Tootill1Staff.png';</script>";
-}
-else if ($lab == 'TOOTILL1' && !$is_TA) {
-    echo "<script>document.getElementById('image').src='Tootill1Student.png';</script>";
-}
+else {
 
-else if ($lab == 'TOOTILL0' && $is_TA) {
-    echo "<script>document.getElementById('image').src='Tootill0Staff.png';</script>";
-}
-else if ($lab == 'TOOTILL0' && !$is_TA) {
-    echo "<script>document.getElementById('image').src='Tootill0Student.png';</script>";
-}
-*/
+    file_put_contents('LF31Staff2.png', base64_decode($staffStringLF31[0]));
+    file_put_contents('LF31Student2.png', base64_decode($studentStringLF31[0]));
+    file_put_contents('Tootill1Staff2.png', base64_decode($staffStringTootill1[0]));
+    file_put_contents('Tootill1Student2.png', base64_decode($studentStringTootill1[0]));
+    file_put_contents('Tootill0Staff2.png', base64_decode($staffStringTootill0[0]));
+    file_put_contents('Tootill0Student2.png', base64_decode($studentStringTootill0[0]));
 
+
+
+    if ($lab == 'LF31' && $is_TA) {
+        echo "<script>document.getElementById('image').src='LF31Staff2.png';</script>";
+    }
+    else if ($lab == 'LF31' && !$is_TA) {
+        echo "<script>document.getElementById('image').src='LF31Student2.png';</script>";
+    }
+
+    else if ($lab == 'TOOTILL1' && $is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill1Staff2.png';</script>";
+    }
+    else if ($lab == 'TOOTILL1' && !$is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill1Student2.png';</script>";
+    }
+
+    else if ($lab == 'TOOTILL0' && $is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill0Staff2.png';</script>";
+    }
+    else if ($lab == 'TOOTILL0' && !$is_TA) {
+        echo "<script>document.getElementById('image').src='Tootill0Student2.png';</script>";
+    }
+
+
+
+    $_SESSION['newFileName'] = 'image1';
+}
 
 ?>

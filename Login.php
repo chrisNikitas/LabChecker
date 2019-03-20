@@ -25,6 +25,7 @@
              $_SESSION['teacherBool'] = $query_row["Teacher"];
              $_SESSION['labGroup'] = $query_row["LabGroup"];
              $_SESSION['loggedIn'] = TRUE;
+             $_SESSION['newFileName'] = 'image1';
 
              header("Location: index.php");
            }
