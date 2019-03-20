@@ -38,7 +38,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $labs_array = explode(',', $labs);
 
     if ($labs_array[$array_index] == 'empty') {
-        //echo "Computer no.<b>$computerID</b> is free<br>";
+        echo "Computer no.<b>$computerID</b> is free<br>";
         $num_free_seats++;
     }
 }
