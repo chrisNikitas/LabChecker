@@ -108,6 +108,13 @@ else {
 		$('#list_form').trigger("submit");
 		//document.forms["list_form"].submit();
 
+    <?php
+		if (file_exists('LF31Staff.png')) {
+		    unlink('LF31Staff.png');
+		}
+		?>
+
+
     document.getElementById('image').src='LF31Staff.png';
 
 		//run karam's python scripts -- if possible
