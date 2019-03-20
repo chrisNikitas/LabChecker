@@ -108,7 +108,7 @@ else {
 		$('#list_form').trigger("submit");
 		//document.forms["list_form"].submit();
 
-
+    document.getElementById('image').src='LF31Staff.png';
 
 		//run karam's python scripts -- if possible
     //wait
