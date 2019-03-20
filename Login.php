@@ -26,7 +26,7 @@
              $_SESSION['labGroup'] = $result["LabGroup"];
              //header("Location: index.php");
              echo "<script>alert('Hello');</script>";
-             echo "$_SESSION['usernameLog']";
+             //echo "$_SESSION['usernameLog']";
              echo "<script>alert($_SESSION['passwordLog']);</script>";
            }
            else {
