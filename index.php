@@ -74,7 +74,7 @@ echo "$temp_message";
 				else {
 					$temp_message = "Go away!!";
 					//session_destroy();
-					header("Location: logout.php");
+					//header("Location: logout.php");
 				}
 
 				echo "$temp_message";
