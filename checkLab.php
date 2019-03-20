@@ -1,41 +1,15 @@
 <?php
 
-/*
-Connect to Database
-
-Get the lab that we want
-
-
-if not TA then:
-
-For every computer in that lab that is free
-print the computer number
-
-if TA then:
-
-For every computer in that lab that is free
-print the computer number
-
-For every computer that is occupied wrongly
-print the computer number
-
-return stuff to the div
-
-*/
-
 session_start();
 
-
 require ("config.inc.php");
-//$con = mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $con = mysqli_connect($database_host, $database_user, $database_pass, $group_dbnames[0]);
-$is_TA = $_SESSION['teacherBool'];
 
-//$is_TA = $_SESSION['teacher'];
+$is_TA = $_SESSION['teacherBool'];
 
 $lab = $_POST['selected_lab'];
 
-echo "<h5>$lab</h5><br>";
+echo "<h4>$lab</h4><br>";
 $array_index = 0;
 $lab_to_query = null;
 
