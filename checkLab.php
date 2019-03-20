@@ -23,10 +23,13 @@ return stuff to the div
 
 */
 
+session_start();
+
+
 require ("config.inc.php");
 //$con = mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $con = mysqli_connect($database_host, $database_user, $database_pass, $group_dbnames[0]);
-$is_TA = TRUE;
+$is_TA = $_SESSION['teacherBool'];
 
 //$is_TA = $_SESSION['teacher'];
 

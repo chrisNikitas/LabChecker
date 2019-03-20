@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <?php
-$temp_message = "This wasn't set";
+$user_display = "Error identifying user";
 
 session_start();
 if (isset($_SESSION['loggedIn'])) {
 	if ($_SESSION['teacherBool']) {
-		$temp_message = "Teacher";
+		$user_display = "Teacher";
 	}
 	else {
-		$temp_message = "Student";
+		$user_display = "Student";
 	}
 }
 else {
@@ -31,7 +31,7 @@ else {
 <body onload="getData()">
 
 	<nav class="navbar navbar-light bg-dark-transparent">
-		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup><?php echo "$temp_message"; ?></sup></a>
+		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup><?php echo "$user_display"; ?></sup></a>
 		<span>
 			<a class="btn btn-light btn-lg " role="button" href="logout.php"><i class="fas fa-sign-out-alt">SignOut</i></a>
 		</span>
