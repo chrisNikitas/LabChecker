@@ -10,7 +10,6 @@ $is_TA = $_SESSION['teacherBool'];
 $lab = $_POST['selected_lab'];
 
 echo "<h4>$lab</h4><br>";
-echo "<h5>$lab</h5><br>";
 $array_index = 0;
 $lab_to_query = null;
 
@@ -54,7 +53,6 @@ else {
     echo "There are $num_free_seats free seats";
 }
 
-echo "<br>";
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
@@ -64,7 +62,7 @@ $noOfStudentsNotInLab = 0;
 //do this part only if they are an admin - show people that shouldnt be there
 if ($is_TA) {
   if ($desired_lab != '-') {
-      echo "<br><hr><br><h6><b>Students that shouldn't be in the lab:</b></h6>";
+      echo "<br><hr><br><h5><b>Students that shouldn't be in the lab:</b></h5>";
       $query = mysqli_query($con, "SELECT * FROM compStatus");
       while ($query_row = mysqli_fetch_assoc($query)){
           $computerID = $query_row['computerID'];
