@@ -62,6 +62,6 @@ else {
         <!--<input type="submit" class="btn" value="Login" id="loginBtn" onclick="index.php">-->
         <input type="submit" class="btn" value="Login" id="loginBtn">
      </form>
-    <p class="footer"></p>
+    <a class="footer"></a>
   </body>
 </html>
