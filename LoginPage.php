@@ -8,6 +8,9 @@ else {
   if (isset($_SESSION['loginErrorMessage'])) {
     $is_it_set = $_SESSION['loginErrorMessage'];
   }
+  else {
+    $is_it_set = "";
+  }
 }
 
 
