@@ -24,18 +24,19 @@
              $_SESSION['passwordLog'] = $query_row["Password"];
              $_SESSION['teacherBool'] = $query_row["Teacher"];
              $_SESSION['labGroup'] = $query_row["LabGroup"];
-             //header("Location: index.php");
+
              $temp_username = $_SESSION['usernameLog'];
              $temp_password = $_SESSION['passwordLog'];
-             echo "<script>alert('Hello');</script>";
+             /*echo "<script>alert('Hello');</script>";
              echo "$temp_username";
-             echo "$temp_password";
+             echo "$temp_password";*/
+             header("Location: index.php");
            }
            else {
              $noResults = "Username or password is wrong";
              echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
              $dbConn->close();
-             //header("Location: Login.html");
+             header("Location: Login.html");
            }
          }
 ?>
