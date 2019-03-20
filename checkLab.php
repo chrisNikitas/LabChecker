@@ -84,7 +84,7 @@ else {
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
 
-
+$noOfStudentsNotInLab = 0;
 
 //do this part only if they are an admin - show people that shouldnt be there
 if ($is_TA) {
@@ -100,10 +100,16 @@ if ($is_TA) {
               && $labs_array[$array_index] != $desired_lab
                 && $labs_array[$array_index] != ' ') {
               echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
+              $noOfStudentsNotInLab++;
           }
+      }
+      if ($noOfStudentsNotInLab == 0) {
+          echo "None";
       }
   }
 }
+
+
 
 echo "<br>";
 /*
