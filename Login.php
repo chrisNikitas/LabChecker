@@ -20,10 +20,10 @@
            if (mysqli_num_rows($query) != 0) {
              $query_row = mysqli_fetch_assoc($query);
              session_start();
-             $_SESSION['usernameLog'] = $query["Username"];
+             $_SESSION['usernameLog'] = $query_row["Username"];
              $_SESSION['passwordLog'] = $query_row["Password"];
-             $_SESSION['teacherBool'] = $result["Teacher"];
-             $_SESSION['labGroup'] = $result["LabGroup"];
+             $_SESSION['teacherBool'] = $query_row["Teacher"];
+             $_SESSION['labGroup'] = $query_row["LabGroup"];
              //header("Location: index.php");
              $temp_username = $_SESSION['usernameLog'];
              $temp_password = $_SESSION['passwordLog'];
