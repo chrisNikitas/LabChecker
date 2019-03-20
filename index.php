@@ -20,7 +20,25 @@ else {
 }
 */
 ?>
+<?php
+$temp_message = "This wasn't set";
 
+session_start();
+if (isset($_SESSION['loggedIn'])) {
+	if ($_SESSION['teacherBool']) {
+		$temp_message = "You are a TA!!";
+	}
+	else {
+		$temp_message = "You are just a puny student";
+	}
+}
+else {
+	//session_destroy();
+	header("Location: logout.php");
+}
+
+//echo "$temp_message";
+?>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +60,7 @@ if (!isset($_SESSION)) {
 }
 echo "$temp_message";*/
 ?>
-<?php
+<?php/*
 $temp_message = "This wasn't set";
 
 session_start();
@@ -59,12 +77,12 @@ else {
 	header("Location: logout.php");
 }
 
-echo "$temp_message";
+echo "$temp_message";*/
 ?>
 
 </p>
 	<nav class="navbar navbar-light bg-dark-transparent">
-		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher</sup></a>
+		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher<?php echo "$temp_message"; ?></sup></a>
 		<span>
 			<a class="btn btn-light btn-lg " role="button" href="logout.php"><i class="fas fa-sign-out-alt">SignOut</i></a>
 		</span>
