@@ -25,9 +25,11 @@
              $_SESSION['teacherBool'] = $result["Teacher"];
              $_SESSION['labGroup'] = $result["LabGroup"];
              //header("Location: index.php");
+             $temp_username = $_SESSION['usernameLog'];
+             $temp_password = $_SESSION['passwordLog'];
              echo "<script>alert('Hello');</script>";
-             //echo "$_SESSION['usernameLog']";
-             echo "<script>alert($_SESSION['passwordLog']);</script>";
+             echo "$temp_username";
+             echo "$temp_password";
            }
            else {
              $noResults = "Username or password is wrong";
