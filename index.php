@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <?
 //DONT THINK THIS WORKS
+$temp_message = "This wasn't set";
 
 session_start();
 if (isset($_SESSION['loggedIn'])) {
-	$temp_message = "Hello!!";
+	if ($_SESSION['TeacherBool']) {
+	  $temp_message = "You are a TA!!";
+	}
+	else {
+		$temp_message = "You are just a puny student";
+	}
 }
 else {
 	$temp_message = "Go away!!";
-	session_destroy();
-	header("Location: LoginPage.php");
+	//session_destroy();
+	header("Location: logout.php");
 }
 
 ?>
@@ -50,6 +56,11 @@ echo "$temp_message";
 					<!--<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">-->
 				</form>
 				<h3>PC Listings</h3>
+				<p>
+				<?php
+				echo "$temp_message";
+				?>
+				</p>
 				<hr>
 				<div id="return_pc_data_outer">
 					<div class="return_pc_data">

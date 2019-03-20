@@ -32,10 +32,12 @@
              //$noResults = "Username or password is wrong";
              //echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
              //$dbConn->close();
+             /*
              session_start();
              $_SESSION['loginErrorMessage'] = "Incorrect details!";
              header("Location: LoginPage.php");
-             //die ('Incorrect details!');
+             */
+             die ('Incorrect details!');
            }
          }
 ?>
