@@ -32,16 +32,36 @@ else {
 
 <body onload="getData()">
 	<p>
-<?
+<?php
 //DONT THINK THIS WORKS
 /*
 session_start();
 if (!isset($_SESSION)) {
 	session_destroy();
 	header("Location: login.php");
-}*/
+}
+echo "$temp_message";*/
+?>
+<?php
+$temp_message = "This wasn't set";
+
+session_start();
+if (isset($_SESSION['loggedIn'])) {
+	if ($_SESSION['teacherBool']) {
+		$temp_message = "You are a TA!!";
+	}
+	else {
+		$temp_message = "You are just a puny student";
+	}
+}
+else {
+	//session_destroy();
+	header("Location: logout.php");
+}
+
 echo "$temp_message";
 ?>
+
 </p>
 	<nav class="navbar navbar-light bg-dark-transparent">
 		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher</sup></a>
@@ -60,6 +80,7 @@ echo "$temp_message";
 
 				<p>
 				<?php
+				/*
 				$temp_message = "This wasn't set";
 
 				session_start();
@@ -72,12 +93,12 @@ echo "$temp_message";
 					}
 				}
 				else {
-					$temp_message = "Go away!!";
 					//session_destroy();
-					//header("Location: logout.php");
+					header("Location: logout.php");
 				}
 
 				echo "$temp_message";
+				*/
 				?>
 				</p>
 
