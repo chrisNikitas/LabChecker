@@ -245,12 +245,12 @@ else {
 
 $newFileName = $_SESSION['newFileName'];
 
-file_put_contents("LF31Staff{$newFileName}.png", base64_decode($staffStringLF31[0]));
-file_put_contents("LF31Student{$newFileName}.png", base64_decode($studentStringLF31[0]));
-file_put_contents("Tootill1Staff{$newFileName}.png", base64_decode($staffStringTootill1[0]));
-file_put_contents("Tootill1Student{$newFileName}.png", base64_decode($studentStringTootill1[0]));
-file_put_contents("Tootill0Staff{$newFileName}.png", base64_decode($staffStringTootill0[0]));
-file_put_contents("Tootill0Student{$newFileName}.png", base64_decode($studentStringTootill0[0]));
+file_put_contents("LF31Staff$newFileName.png", base64_decode($staffStringLF31[0]));
+file_put_contents("LF31Student$newFileName.png", base64_decode($studentStringLF31[0]));
+file_put_contents("Tootill1Staff$newFileName.png", base64_decode($staffStringTootill1[0]));
+file_put_contents("Tootill1Student$newFileName.png", base64_decode($studentStringTootill1[0]));
+file_put_contents("Tootill0Staff$newFileName.png", base64_decode($staffStringTootill0[0]));
+file_put_contents("Tootill0Student$newFileName.png", base64_decode($studentStringTootill0[0]));
 
 
 
