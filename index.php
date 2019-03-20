@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?
+//DONT THINK THIS WORKS
+
+session_start();
+if (!isset($_SESSION)) {
+	session_destroy();
+	header("Location: login.php");
+}
+
+?>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,12 +21,12 @@
 <body onload="getData()">
 <?
 //DONT THINK THIS WORKS
-
+/*
 session_start();
 if (!isset($_SESSION)) {
 	session_destroy();
 	header("Location: login.php");
-}
+}*/
 
 ?>
 	<nav class="navbar navbar-light bg-dark-transparent">
