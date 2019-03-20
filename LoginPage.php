@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <?php
 session_start();
-if ($_SESSION['loggedIn'] == TRUE) {
+if (isset($_SESSION['loggedIn'])) {
   $is_it_set = "logged in";
 }
 else {
-  $is_it_set = "not logged in";
+  if (isset($_SESSION['loginErrorMessage'])) {
+    $is_it_set = $_SESSION['loginErrorMessage'];
+  }
 }
 
 
