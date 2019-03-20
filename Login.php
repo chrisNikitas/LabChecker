@@ -18,13 +18,16 @@
            $query = mysqli_query($dbConn, "SELECT * FROM Users WHERE Username = '$inputUsername' AND Password = '$inputPassword'");
            //if ($result->num_rows > 0) {
            if (mysqli_num_rows($query) != 0) {
+             $query_row = mysqli_fetch_assoc($query);
              session_start();
-             $_SESSION['usernameLog'] = $result["Username"];
-             $_SESSION['passwordLog'] = $result["Password"];
+             $_SESSION['usernameLog'] = $query["Username"];
+             $_SESSION['passwordLog'] = $query_row["Password"];
              $_SESSION['teacherBool'] = $result["Teacher"];
              $_SESSION['labGroup'] = $result["LabGroup"];
              //header("Location: index.php");
              echo "<script>alert('Hello');</script>";
+             echo "<script>alert($_SESSION['usernameLog']);</script>";
+             echo "<script>alert($_SESSION['passwordLog']);</script>";
            }
            else {
              $noResults = "Username or password is wrong";
