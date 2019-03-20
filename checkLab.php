@@ -115,8 +115,8 @@ echo "$outputTootill1";
 
 sleep(3);
 */
-//sleep(4);
-usleep(4150000);
+sleep(4);
+//usleep(4150000);
 
 $queryLF31Staff = "SELECT LF31 FROM base64Images WHERE Type = 'Staff'";
 $queryLF31Student = "SELECT LF31 FROM base64Images WHERE Type = 'Student'";
