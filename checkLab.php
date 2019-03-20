@@ -169,7 +169,7 @@ file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
 file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
 
 
-
+/*
 if ($lab == 'LF31' && $is_TA) {
     echo "<script>document.getElementById('image').src='LF31Staff.png';</script>";
 }
@@ -190,7 +190,7 @@ else if ($lab == 'TOOTILL0' && $is_TA) {
 else if ($lab == 'TOOTILL0' && !$is_TA) {
     echo "<script>document.getElementById('image').src='Tootill0Student.png';</script>";
 }
-
+*/
 
 
 ?>
