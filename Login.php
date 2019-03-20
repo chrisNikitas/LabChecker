@@ -23,11 +23,12 @@
              $_SESSION['passwordLog'] = $result["Password"];
              $_SESSION['teacherBool'] = $result["Teacher"];
              $_SESSION['labGroup'] = $result["LabGroup"];
-             header("Location: index.php");
+             //header("Location: index.php");
+             echo "<script>alert('Hello');</script>";
            }
            else {
              $noResults = "Username or password is wrong";
-             echo '<script type="text/javascript">alert("Username or password is wrong");</script>';
+             echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
              $dbConn->close();
              //header("Location: Login.html");
            }

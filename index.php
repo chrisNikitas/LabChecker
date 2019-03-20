@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <?
 //DONT THINK THIS WORKS
-
+/*
 session_start();
 if (!isset($_SESSION)) {
 	session_destroy();
 	header("Location: login.php");
 }
-
+*/
 ?>
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
