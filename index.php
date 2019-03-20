@@ -57,13 +57,14 @@ echo "$temp_message";
 					<!--<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">-->
 				</form>
 				<h3>PC Listings</h3>
+
 				<p>
 				<?php
 				$temp_message = "This wasn't set";
 
 				session_start();
 				if (isset($_SESSION['loggedIn'])) {
-					if ($_SESSION['TeacherBool']) {
+					if ($_SESSION['teacherBool']) {
 					  $temp_message = "You are a TA!!";
 					}
 					else {
@@ -79,6 +80,7 @@ echo "$temp_message";
 				echo "$temp_message";
 				?>
 				</p>
+
 				<hr>
 				<div id="return_pc_data_outer">
 					<div class="return_pc_data">
