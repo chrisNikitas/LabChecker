@@ -53,6 +53,8 @@ else {
     echo "There are $num_free_seats free seats";
 }
 
+echo "<br><hr><br>";
+
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
@@ -62,7 +64,7 @@ $noOfStudentsNotInLab = 0;
 //do this part only if they are an admin - show people that shouldnt be there
 if ($is_TA) {
   if ($desired_lab != '-') {
-      echo "<br><hr><br><h6><b>Students that shouldn't be in the lab:</b></h6>";
+      echo "<h6><b>Students that shouldn't be in the lab:</b></h6>";
       $query = mysqli_query($con, "SELECT * FROM compStatus");
       while ($query_row = mysqli_fetch_assoc($query)){
           $computerID = $query_row['computerID'];
@@ -79,6 +81,14 @@ if ($is_TA) {
       if ($noOfStudentsNotInLab == 0) {
           echo "None";
       }
+  }
+}
+else {
+  if ($desired_lab != '-') {
+      echo "There is currently a scheduled lab in this room";
+  }
+  else {
+      echo "There are no labs currently scheduled in this room";
   }
 }
 
