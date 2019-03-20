@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <?
 //DONT THINK THIS WORKS
-/*
+
 session_start();
-if (!isset($_SESSION)) {
+if (isset($_SESSION['loggedIn'])) {
+	$temp_message = "Hello!!";
+}
+else {
 	session_destroy();
 	header("Location: login.php");
 }
-*/
+
 ?>
 
 <html>
@@ -20,6 +23,7 @@ if (!isset($_SESSION)) {
 	</head>
 
 <body onload="getData()">
+	<p>
 <?
 //DONT THINK THIS WORKS
 /*
@@ -28,8 +32,9 @@ if (!isset($_SESSION)) {
 	session_destroy();
 	header("Location: login.php");
 }*/
-
+echo "$temp_message";
 ?>
+</p>
 	<nav class="navbar navbar-light bg-dark-transparent">
 		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher</sup></a>
 		<span>

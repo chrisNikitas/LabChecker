@@ -6,7 +6,7 @@ if (isset($_SESSION['loggedIn'])) {
 }
 else {
   if (isset($_SESSION['loginErrorMessage'])) {
-    $is_it_set = $_SESSION['loginErrorMessage'];
+    $is_it_set = "Thats wrong!!";
   }
   else {
     $is_it_set = "";
