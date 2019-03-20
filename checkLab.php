@@ -168,7 +168,7 @@ if (file_exists('Tootill0Student.png')) {
     //unlink('Tootill0Student.png');
 }
 
-if ($_SESSION['newFileName'] = 'image1') {
+if ($_SESSION['newFileName'] == 'image1') {
 
     file_put_contents('LF31Staff.png', base64_decode($staffStringLF31[0]));
     file_put_contents('LF31Student.png', base64_decode($studentStringLF31[0]));
