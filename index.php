@@ -1,44 +1,23 @@
 <!DOCTYPE html>
-<?
-//DONT THINK THIS WORKS
-/*
-$temp_message = "This wasn't set";
-
-session_start();
-if (isset($_SESSION['loggedIn'])) {
-	if ($_SESSION['TeacherBool']) {
-	  $temp_message = "You are a TA!!";
-	}
-	else {
-		$temp_message = "You are just a puny student";
-	}
-}
-else {
-	$temp_message = "Go away!!";
-	//session_destroy();
-	header("Location: logout.php");
-}
-*/
-?>
 <?php
 $temp_message = "This wasn't set";
 
 session_start();
 if (isset($_SESSION['loggedIn'])) {
 	if ($_SESSION['teacherBool']) {
-		$temp_message = "You are a TA!!";
+		$temp_message = "Teacher";
 	}
 	else {
-		$temp_message = "You are just a puny student";
+		$temp_message = "Student";
 	}
 }
 else {
-	//session_destroy();
 	header("Location: logout.php");
 }
 
-//echo "$temp_message";
 ?>
+
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,41 +27,11 @@ else {
 	<link rel="stylesheet" type="text/css" href="labStyle.css">
 	</head>
 
+
 <body onload="getData()">
-	<p>
-<?php
-//DONT THINK THIS WORKS
-/*
-session_start();
-if (!isset($_SESSION)) {
-	session_destroy();
-	header("Location: login.php");
-}
-echo "$temp_message";*/
-?>
-<?php/*
-$temp_message = "This wasn't set";
 
-session_start();
-if (isset($_SESSION['loggedIn'])) {
-	if ($_SESSION['teacherBool']) {
-		$temp_message = "You are a TA!!";
-	}
-	else {
-		$temp_message = "You are just a puny student";
-	}
-}
-else {
-	//session_destroy();
-	header("Location: logout.php");
-}
-
-echo "$temp_message";*/
-?>
-
-</p>
 	<nav class="navbar navbar-light bg-dark-transparent">
-		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup>Teacher<?php echo "$temp_message"; ?></sup></a>
+		<a class="navbar-brand" id="titleLab" href="#">Lab<span id="titleChecker">Checker<sup><?php echo "$temp_message"; ?></sup></a>
 		<span>
 			<a class="btn btn-light btn-lg " role="button" href="logout.php"><i class="fas fa-sign-out-alt">SignOut</i></a>
 		</span>
@@ -95,44 +44,10 @@ echo "$temp_message";*/
 					<!--<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">-->
 				</form>
 				<h3>PC Listings</h3>
-
-				<p>
-				<?php
-				/*
-				$temp_message = "This wasn't set";
-
-				session_start();
-				if (isset($_SESSION['loggedIn'])) {
-					if ($_SESSION['teacherBool']) {
-					  $temp_message = "You are a TA!!";
-					}
-					else {
-						$temp_message = "You are just a puny student";
-					}
-				}
-				else {
-					//session_destroy();
-					header("Location: logout.php");
-				}
-
-				echo "$temp_message";
-				*/
-				?>
-				</p>
-
 				<hr>
 				<div id="return_pc_data_outer">
 					<div class="return_pc_data">
-						<!--
-						<ul>
-							<li>PC 3 is free</li>
-							<li>PC 5 is free</li>
-							<li>PC 13 is free</li>
-							<li>PC 25 is free</li>
-							<li>PC 4 is occupied</li>
-							<li>PC 6 is occupied</li>
-						</ul>
-					  -->
+          <!-- Holds data returned from checkLab.php -->
 				  </div>
 			  </div>
 			</div>
