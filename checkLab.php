@@ -67,6 +67,7 @@ if ($is_TA) {
       echo "<h6><b>Students that shouldn't be in the lab:</b></h6>";
       $query = mysqli_query($con, "SELECT * FROM compStatus");
       while ($query_row = mysqli_fetch_assoc($query)){
+          echo "<br>";
           $computerID = $query_row['computerID'];
           $labs = $query_row['labs'];
           $labs_array = explode(',', $labs);
@@ -74,7 +75,7 @@ if ($is_TA) {
           if ($labs_array[$array_index] != 'empty'
               && $labs_array[$array_index] != $desired_lab
                 && $labs_array[$array_index] != ' ') {
-              echo "Student at computer no.<b>$computerID</b> is not in this lab<br>";
+              echo "Student at computer no.<b>$computerID</b> is not in this lab";
               $noOfStudentsNotInLab++;
           }
       }
@@ -82,7 +83,11 @@ if ($is_TA) {
           echo "None";
       }
   }
+  else {
+      echo "There are no labs currently scheduled in this room";
+  }
 }
+
 else {
   if ($desired_lab != '-') {
       echo "There is currently a scheduled lab in this room";
