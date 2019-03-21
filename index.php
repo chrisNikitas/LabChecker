@@ -94,7 +94,7 @@ $_SESSION['newFileName'] = 1;
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
-		document.getElementById('image').src="GreyTootill0.jpg";
+		document.getElementById('image').src="GreyTootill0.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 		//getData();
 	}
@@ -103,7 +103,7 @@ $_SESSION['newFileName'] = 1;
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100 active";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
-		document.getElementById('image').src="GreyTootill1.jpg";
+		document.getElementById('image').src="GreyTootill1.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 		//getData();
 	}
