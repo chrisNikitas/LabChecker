@@ -66,6 +66,17 @@ else {
 echo "<br><hr><br>";
 //array_push($data_to_echo, "<br><hr><br>");
 
+echo "<h4><u>Key</u></h4><br>";
+
+echo "<div style='width:5px; height:5px; margin:5px; border:1px solid black; background: green'></div> - Available seats";
+
+echo "<div style='width:5px; height:5px; margin:5px; border:1px solid black; background: red'></div> - Unavailable seats";
+
+
+
+
+echo "<br><hr><br>";
+
 
 $lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
 $desired_lab = $lab_query[$lab_to_query];
@@ -123,7 +134,7 @@ echo "<br>";
 
 
 
-sleep(5);
+sleep(4);
 //usleep(4150000);
 
 $queryLF31Staff = "SELECT LF31 FROM base64Images WHERE Type = 'Staff'";
