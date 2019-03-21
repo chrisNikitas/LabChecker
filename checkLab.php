@@ -157,7 +157,9 @@ file_put_contents('Tootill1Student.png', base64_decode($studentStringTootill1[0]
 file_put_contents('Tootill0Staff.png', base64_decode($staffStringTootill0[0]));
 file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]));
 
-
+foreach($data_to_echo as $item_to_echo) {
+    echo $item_to_echo;
+}
 //echo "<script>var d = new Date();</script>";
 array_push($data_to_echo, "");
 
@@ -200,8 +202,6 @@ else {
   echo "$lab";
 }
 */
-foreach($data_to_echo as $item_to_echo) {
-    echo $item_to_echo;
-}
+
 
 ?>
