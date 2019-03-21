@@ -38,7 +38,7 @@ else {
         Password
         <input type="password" name="Password" Placeholder="your password here" onclick="checkInput()" id="Password" maxlength=128 required><br>
         </div>
-        <p style="color:red; font-size: 18px; text-align: center; text-shadow-color: white;"><?php echo "$loginErrorMessage"; ?> </p>
+        <p style="color:red; font-size: 18px; text-align: center;"><?php echo "$loginErrorMessage"; ?> </p>
          <input type="button" class="btn" onclick="showPassword()" value="Show Password" id="showPassBtn">
          <script type="text/javascript">
               function showPassword() {
