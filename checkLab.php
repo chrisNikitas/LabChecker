@@ -187,14 +187,14 @@ else if ($lab == 'TOOTILL0' && !$is_TA) {
     array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>");
 }
 
-
-if ($_SESSION['navCurrentLab'] == $lab) {
+$new_lab = $_SESSION['navCurrentLab'];
+if ($new_lab == $lab) {
     foreach($data_to_echo as $item_to_echo) {
         echo $item_to_echo;
     }
 }
 else {
-  echo "$_SESSION['navCurrentLab']";
+  echo "$new_lab";
   echo "<br>";
   echo "$lab";
 }
