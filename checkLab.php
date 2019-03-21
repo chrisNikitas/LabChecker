@@ -236,7 +236,7 @@ foreach($data_to_echo as $item_to_echo) {
 
 echo "<script>setTimeout(checkSameLab, 500)</script>";
 
-echo "'.<script>if (document.getElementById('hidden_selected_lab').value != <?php echo "$_SESSION['navCurrentLab']" ?>) { document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...'; }.'"
+echo '".<script>if (document.getElementById('hidden_selected_lab').value != <?php echo "$_SESSION['navCurrentLab']" ?>) { document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...'; }."'
 
 
 
