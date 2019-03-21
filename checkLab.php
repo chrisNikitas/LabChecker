@@ -64,15 +64,29 @@ else {
 }
 
 echo "<hr>";
-//array_push($data_to_echo, "<br><hr><br>");
+//array_push($data_to_echo, "<hr>");
+
+$lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
+$desired_lab = $lab_query[$lab_to_query];
+
+
 
 echo "<h4><u>Key</u></h4>";
 
-echo "<div style='display:inline-block;'>Available seats    <div style='display:inline-block; width:2px; height:2px; margin:5px; margin-top:100px;
-       border:1px solid black; background: green;'></div></div>";
+echo "<div style='display:inline-block;'>Available seats<div style='display:inline-block; width:20px; height:20px; margin:5px;
+       border:1px solid black; background: limegreen;'></div></div>";
 
-echo "<div style='display:inline-block;'>Unavailable seats    <div style='display:inline-block; width:2px; height:2px; margin:5px;
-      border:1px solid black; background: red;'></div></div>";
+if ($desired_lab != '-' && $is_TA) {
+    echo "<br><div style='display:inline-block;'>Unavailable seats - in the lab<div style='display:inline-block; width:20px; height:20px; margin:5px;
+          border:1px solid black; background: yellow;'></div></div>";
+
+    echo "<br><div style='display:inline-block;'>Unavailable seats - not in lab<div style='display:inline-block; width:20px; height:20px; margin:5px;
+          border:1px solid black; background: red;'></div></div>";
+}
+else {
+    echo "<br><div style='display:inline-block;'>Unavailable seats<div style='display:inline-block; width:20px; height:20px; margin:5px;
+          border:1px solid black; background: red;'></div></div>";
+}
 
 //echo "<div style='display:inline-block;'><div style='width:20px; height:20px; margin:5px; border:1px solid black; background: red'></div> - Unavailable seats</div>";
 
@@ -82,8 +96,6 @@ echo "<div style='display:inline-block;'>Unavailable seats    <div style='displa
 echo "<br><hr><br>";
 
 
-$lab_query = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM desiredGroups"));
-$desired_lab = $lab_query[$lab_to_query];
 
 $noOfStudentsNotInLab = 0;
 
