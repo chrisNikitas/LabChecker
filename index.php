@@ -141,7 +141,7 @@ else {
 		}*/
 	}
   var oldLab = 'LF31';
-	var keepGettingData = setInterval(getData, 5100);
+	var keepGettingData = setInterval(getData, 6100);
 </script>
 </body>
 </html>
