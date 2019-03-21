@@ -68,7 +68,7 @@ echo "<br><hr><br>";
 
 echo "<h4><u>Key</u></h4><br>";
 
-echo "<div style='width:20px; height:20px; margin:5px; margin-top:0px; margin-left:15px; border:1px solid black; background: green'></div> - Available seats";
+//echo "<div style='width:20px; height:20px; margin:5px; margin-top:0px; margin-left:15px; border:1px solid black; background: green'></div> - Available seats";
 
 echo "<div style='display:inline-block;'><div style='width:20px; height:20px; margin:5px; border:1px solid black; background: red'></div> - Unavailable seats</div>";
 
