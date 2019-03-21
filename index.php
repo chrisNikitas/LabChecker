@@ -121,6 +121,7 @@ else {
 		$('#list_form').trigger("submit");
     if (oldLab != document.getElementById('hidden_selected_lab').value) {
 			alert(oldLab);
+			oldLab = document.getElementById('hidden_selected_lab').value;
 		}
 /*
 		if (newLab == document.getElementById('hidden_selected_lab').value) {
