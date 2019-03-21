@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-/*
+
 session_start();
 if (isset($_SESSION['loggedIn'])) {
   $is_it_set = "logged in";
@@ -10,11 +10,11 @@ else {
     $is_it_set = "Thats wrong!!";
   }
   else {
-    $is_it_set = "";
+    $is_it_set = "Welcome to the website";
   }
 }
 
-*/
+
 ?>
 
 <html lang="en" dir="ltr">
@@ -29,7 +29,7 @@ else {
     </div>
     <div class="form-box">
       <form action="Login.php" method="post" autocomplete="off">  <!--haven't made main page-->
-        <!--<p><?/*php echo "$is_it_set"; */?> </p>-->
+        <p><?php echo "$is_it_set"; ?> </p>
         <div class="textbox">
         Username
         <input type="text" name="Username" Placeholder="your username here" onclick="checkInput()" id="Username" maxlength=128 required><br>
