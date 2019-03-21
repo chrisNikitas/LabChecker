@@ -11,7 +11,7 @@ $data_to_echo = array();
 $is_TA = $_SESSION['teacherBool'];
 
 $lab = $_POST['selected_lab'];
-//$_SESSION['navCurrentLab'] = $lab;
+$_SESSION['navCurrentLab'] = $lab;
 
 echo "<h4>$lab</h4><br>";
 //array_push($data_to_echo, "<h4>$lab</h4><br>");
@@ -233,4 +233,13 @@ foreach($data_to_echo as $item_to_echo) {
     echo "$item_to_echo";
 }
 */
+
+echo "<script>setTimeout(checkSameLab, 500)</script>";
+
+echo "'.<script>if (document.getElementById('hidden_selected_lab').value != <?php echo "$_SESSION['navCurrentLab']" ?>) { document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...'; }.'"
+
+
+
+
+
 ?>
