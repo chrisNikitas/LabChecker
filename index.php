@@ -127,7 +127,7 @@ else {
 		}*/
 	}
 
-	var keepGettingData = setInterval(getData, 1200);
+	var keepGettingData = setInterval(getData, 5100);
 </script>
 </body>
 </html>
