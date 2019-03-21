@@ -99,22 +99,12 @@ else {
 
 
 echo "<br>";
-/*
-$commandLF31 = escapeshellcmd('python LF31/drawLF31.py');
-$outputLF31 = shell_exec($commandLF31);
-echo "$outputLF31";
-
-$commandTootill0 = escapeshellcmd('python Tootill0/drawTootill0.py');
-$outputTootill0 = shell_exec($commandTootill0);
-echo "$outputTootill0";
-
-$commandTootill1 = escapeshellcmd('python Tootill1/drawTootill1.py');
-$outputTootill1 = shell_exec($commandTootill1);
-echo "$outputTootill1";
 
 
-sleep(3);
-*/
+
+
+
+
 sleep(4);
 //usleep(4150000);
 
