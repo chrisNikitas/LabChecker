@@ -162,30 +162,30 @@ file_put_contents('Tootill0Student.png', base64_decode($studentStringTootill0[0]
 array_push($data_to_echo, "");
 
 if ($lab == 'LF31' && $is_TA) {
-    //echo "<script>document.getElementById('image').src='LF31Staff.png?'+d.getTime();</script>";
-    array_push($data_to_echo, "<script>document.getElementById('image').src='LF31Staff.png?'+d.getTime();</script>");
+    echo "<script>document.getElementById('image').src='LF31Staff.png?'+d.getTime();</script>";
+    //array_push($data_to_echo, "<script>document.getElementById('image').src='LF31Staff.png?'+d.getTime();</script>");
 }
 else if ($lab == 'LF31' && !$is_TA) {
-    //echo "<script>document.getElementById('image').src='LF31Student.png?'+d.getTime();</script>";
-    array_push($data_to_echo, "<script>document.getElementById('image').src='LF31Student.png?'+d.getTime();</script>");
+    echo "<script>document.getElementById('image').src='LF31Student.png?'+d.getTime();</script>";
+    //array_push($data_to_echo, "<script>document.getElementById('image').src='LF31Student.png?'+d.getTime();</script>");
 }
 
 else if ($lab == 'TOOTILL1' && $is_TA) {
-    //echo "<script>document.getElementById('image').src='Tootill1Staff.png?'+d.getTime();</script>";
-    array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill1Staff.png?'+d.getTime();</script>");
+    echo "<script>document.getElementById('image').src='Tootill1Staff.png?'+d.getTime();</script>";
+    //array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill1Staff.png?'+d.getTime();</script>");
 }
 else if ($lab == 'TOOTILL1' && !$is_TA) {
-    //echo "<script>document.getElementById('image').src='Tootill1Student.png?'+d.getTime();</script>";
-    array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill1Student.png?'+d.getTime();</script>");
+    echo "<script>document.getElementById('image').src='Tootill1Student.png?'+d.getTime();</script>";
+    //array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill1Student.png?'+d.getTime();</script>");
 }
 
 else if ($lab == 'TOOTILL0' && $is_TA) {
-    //echo "<script>document.getElementById('image').src='Tootill0Staff.png?'+d.getTime();</script>";
-    array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Staff.png?'+d.getTime();</script>");
+    echo "<script>document.getElementById('image').src='Tootill0Staff.png?'+d.getTime();</script>";
+    //array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Staff.png?'+d.getTime();</script>");
 }
 else if ($lab == 'TOOTILL0' && !$is_TA) {
-    //echo "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>";
-    array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>");
+    echo "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>";
+    //array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>");
 }
 /*
 $new_lab = $_SESSION['navCurrentLab'];
