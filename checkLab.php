@@ -188,7 +188,7 @@ else if ($lab == 'TOOTILL0' && !$is_TA) {
 }
 
 
-if (S_SESSION['navCurrentLab'] == $lab) {
+if ($_SESSION['navCurrentLab'] == $lab) {
     foreach($data_to_echo as $item_to_echo) {
         echo $item_to_echo;
     }
