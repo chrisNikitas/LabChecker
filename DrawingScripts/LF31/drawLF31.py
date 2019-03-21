@@ -193,7 +193,9 @@ def imDrawer():
 
   # push staff image to db
   buffer = cStringIO.StringIO()
+
   studentImg.save(buffer, format="PNG")
+
   student_encoded = base64.b64encode(buffer.getvalue())
 
   command = "UPDATE base64Images SET LF31='" + student_encoded + "' WHERE Type='Student'"
