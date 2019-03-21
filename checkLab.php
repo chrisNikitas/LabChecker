@@ -5,7 +5,7 @@ session_start();
 require ("config.inc.php");
 $con = mysqli_connect($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
-$data_to_echo();
+$data_to_echo = array();
 
 $is_TA = $_SESSION['teacherBool'];
 
