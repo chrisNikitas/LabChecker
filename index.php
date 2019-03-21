@@ -86,7 +86,7 @@ else {
 		document.getElementById('hidden_selected_lab').value = "LF31";
 		document.getElementById('image').src="GreyLF31.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-		<?php $_SESSION['navCurrentLab'] = 'LF31'; ?>
+	  <?php $_SESSION['navCurrentLab'] = 'LF31'; ?>
 		//clearInveral(getData);
 		//var keepGettingData = setInterval(getData, 5000);
 		//getData();
@@ -110,7 +110,7 @@ else {
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
 		document.getElementById('image').src="GreyTootill1.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-		<?php $_SESSION['navCurrentLab'] = 'TOOTILL1'; ?>
+		<?php /*$_SESSION['navCurrentLab'] = 'TOOTILL1';*/ ?>
 		//clearInveral(getData);
 		//var keepGettingData = setInterval(getData, 5000);
 		//getData();
