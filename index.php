@@ -120,7 +120,7 @@ else {
   function getData() {
 		$('#list_form').trigger("submit");
     if (oldLab != document.getElementById('hidden_selected_lab').value) {
-			alert(You triggered it!!);
+			alert('You triggered it!!');
 		}
 /*
 		if (newLab == document.getElementById('hidden_selected_lab').value) {
