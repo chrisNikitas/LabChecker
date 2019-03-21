@@ -150,7 +150,7 @@ echo "<br>";
 
 
 
-sleep(6);
+sleep(4);
 //usleep(4150000);
 
 $queryLF31Staff = "SELECT LF31 FROM base64Images WHERE Type = 'Staff'";
