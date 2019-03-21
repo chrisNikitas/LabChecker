@@ -49,6 +49,7 @@ $_SESSION['newFileName'] = 1;
 				<div id="return_pc_data_outer">
 					<div class="return_pc_data">
           <!-- Holds data returned from checkLab.php -->
+					Loading data from lab...
 				  </div>
 			  </div>
 			</div>
@@ -66,7 +67,7 @@ $_SESSION['newFileName'] = 1;
 				</div>
 			<div class="row">
 				<div class="col-md-12 d-flex justify-content-center align-items-start" id="lab"  >
-					<img id="image" src="DrawingScripts_staffImage.png" alt="lab">
+					<img id="image" src="GreyLF31.png" alt="lab">
 				</div>
 			</div>
 			</div>
