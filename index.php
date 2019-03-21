@@ -15,7 +15,6 @@ else {
 	header("Location: logout.php");
 }
 
-$_SESSION['newFileName'] = 1;
 ?>
 
 
@@ -87,6 +86,9 @@ $_SESSION['newFileName'] = 1;
 		document.getElementById('hidden_selected_lab').value = "LF31";
 		document.getElementById('image').src="GreyLF31.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+		<?php $_SESSION['navCurrentLab'] = 'LF31'; ?>
+		clearInveral(getData);
+		var keepGettingData = setInterval(getData, 5000);
 		//getData();
 	}
 	function SHOW_TOOTILL0() {
@@ -96,6 +98,9 @@ $_SESSION['newFileName'] = 1;
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
 		document.getElementById('image').src="GreyTootill0.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+		<?php $_SESSION['navCurrentLab'] = 'Tootill0'; ?>
+		clearInveral(getData);
+		var keepGettingData = setInterval(getData, 5000);
 		//getData();
 	}
 	function SHOW_TOOTILL1() {
@@ -105,6 +110,9 @@ $_SESSION['newFileName'] = 1;
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
 		document.getElementById('image').src="GreyTootill1.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+		<?php $_SESSION['navCurrentLab'] = 'Tootill1'; ?>
+		clearInveral(getData);
+		var keepGettingData = setInterval(getData, 5000);
 		//getData();
 	}
 

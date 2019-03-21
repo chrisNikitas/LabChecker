@@ -21,12 +21,12 @@
            if (mysqli_num_rows($query) != 0) {
              $query_row = mysqli_fetch_assoc($query);
              //session_start();
-             $_SESSION['usernameLog'] = $query_row["Username"];
-             $_SESSION['passwordLog'] = $query_row["Password"];
+             //$_SESSION['usernameLog'] = $query_row["Username"];
+             //$_SESSION['passwordLog'] = $query_row["Password"];
              $_SESSION['teacherBool'] = $query_row["Teacher"];
              $_SESSION['labGroup'] = $query_row["LabGroup"];
              $_SESSION['loggedIn'] = TRUE;
-             $_SESSION['newFileName'] = 'image1';
+             $_SESSION['navCurrentLab'] = 'LF31';
 
              header("Location: index.php");
            }
