@@ -47,7 +47,7 @@ $_SESSION['newFileName'] = 1;
 				<h3>PC Listings</h3>
 				<hr>
 				<div id="return_pc_data_outer">
-					<div class="return_pc_data">
+					<div class="return_pc_data" id="return_pc_data">
           <!-- Holds data returned from checkLab.php -->
 					Loading data from lab...
 				  </div>
@@ -81,42 +81,36 @@ $_SESSION['newFileName'] = 1;
 <script>
 
 	function SHOW_LF31() {
-		//document.getElementById('image').src="DrawingScripts_LF31_staffImage.png";
 		document.getElementById("button_LF31").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "LF31";
-		getData();
+		document.getElementById('image').src="GreyLF31.png";
+		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+		//getData();
 	}
 	function SHOW_TOOTILL0() {
-		//document.getElementById('image').src="otherPicture.jpg";
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
-		getData();
+		document.getElementById('image').src="GreyTootill0.jpg";
+		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+		//getData();
 	}
 	function SHOW_TOOTILL1() {
-		//document.getElementById('image').src="DrawingScripts_Tootill1_staffImage.png";
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100 active";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
-		getData();
+		document.getElementById('image').src="GreyTootill1.jpg";
+		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+		//getData();
 	}
 
 
   function getData() {
 		$('#list_form').trigger("submit");
-		//document.forms["list_form"].submit();
-
-
-    //document.getElementById('image').src='LF31Staff.png';
-
-		//run karam's python scripts -- if possible
-    //wait
-		//collect Karam's image
-		//^^run karams testDecodeImage.php
 	}
 
 	var keepGettingData = setInterval(getData, 5000);
