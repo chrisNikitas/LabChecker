@@ -39,7 +39,7 @@ $_SESSION['newFileName'] = 1;
 	</nav>
 	<div class="container-fluid bg-green-transparent">
 		<div class="row">
-			<div class="col-md-4 col-lg-3 border-right pt-2" id="list">
+			<div class="col-md-4 col-lg-3 border-right py-2" id="list">
 				<form id="list_form" method="POST">
 					<input type="hidden" id="hidden_selected_lab" name="hidden_selected_lab" value="LF31">
 					<!--<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">-->
