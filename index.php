@@ -119,14 +119,16 @@ else {
 
   function getData() {
 		$('#list_form').trigger("submit");
-
+    if (oldLab != document.getElementById('hidden_selected_lab').value) {
+			alert(You triggered it!!);
+		}
 /*
 		if (newLab == document.getElementById('hidden_selected_lab').value) {
 			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 			document.getElementById('image').src="GreyLF31.png";
 		}*/
 	}
-
+  var oldLab = 'LF31';
 	var keepGettingData = setInterval(getData, 5100);
 </script>
 </body>
