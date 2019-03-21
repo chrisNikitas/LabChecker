@@ -202,7 +202,7 @@ else {
 }
 */
 foreach($data_to_echo as $item_to_echo) {
-    echo $item_to_echo;
+    echo "$item_to_echo";
 }
 
 ?>

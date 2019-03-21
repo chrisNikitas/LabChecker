@@ -66,7 +66,7 @@ else {
 				</div>
 			<div class="row">
 				<div class="col-md-12 d-flex justify-content-center align-items-start" id="lab"  >
-					<img id="image" src="GreyLF311111.png" alt="lab">
+					<img id="image" src="GreyLF31.png" alt="lab">
 				</div>
 			</div>
 			</div>
@@ -84,7 +84,7 @@ else {
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "LF31";
-		//document.getElementById('image').src="GreyLF31.png";
+		document.getElementById('image').src="GreyLF31.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 
 		//clearInveral(getData);
@@ -96,7 +96,7 @@ else {
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100 active";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
-		//document.getElementById('image').src="GreyTootill0.png";
+		document.getElementById('image').src="GreyTootill0.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 
 		//clearInveral(getData);
@@ -108,7 +108,7 @@ else {
 		document.getElementById("button_TOOTILL0").className = "btn btn-light w-100";
 		document.getElementById("button_TOOTILL1").className = "btn btn-light w-100 active";
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
-		//document.getElementById('image').src="GreyTootill1.png";
+		document.getElementById('image').src="GreyTootill1.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 
 		//clearInveral(getData);
