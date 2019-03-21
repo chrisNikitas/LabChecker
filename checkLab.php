@@ -234,7 +234,7 @@ foreach($data_to_echo as $item_to_echo) {
 }
 */
 
-echo "<script>var oldLab = $lab</script>";
+//echo "<script>var oldLab = $lab</script>";
 
 
 
