@@ -119,6 +119,7 @@ else {
 
   function getData() {
 		$('#list_form').trigger("submit");
+		/*
     if (oldLab != document.getElementById('hidden_selected_lab').value) {
 			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 			if (document.getElementById('hidden_selected_lab').value == 'LF31') {
@@ -132,7 +133,7 @@ else {
 			}
 			//alert(oldLab);
 			oldLab = document.getElementById('hidden_selected_lab').value;
-		}
+		}*/
 /*
 		if (newLab == document.getElementById('hidden_selected_lab').value) {
 			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";

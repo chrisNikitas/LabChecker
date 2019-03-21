@@ -242,7 +242,20 @@ foreach($data_to_echo as $item_to_echo) {
 
 //echo "<script>if (document.getElementById('hidden_selected_lab').value != <?php echo '$_SESSION['.'navCurrentLab'.']' ) { document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...'; }"
 
-
+echo "<script>if (oldLab != document.getElementById('hidden_selected_lab').value) {
+			document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...';
+			if (document.getElementById('hidden_selected_lab').value == 'LF31') {
+				document.getElementById('image').src='GreyLF31.png';
+			}
+			if (document.getElementById('hidden_selected_lab').value == 'TOOTILL0') {
+				document.getElementById('image').src='GreyTootill0.png';
+			}
+			if (document.getElementById('hidden_selected_lab').value == 'TOOTILL1') {
+				document.getElementById('image').src='GreyTootill1.png';
+			}
+			//alert(oldLab);
+			oldLab = document.getElementById('hidden_selected_lab').value;
+		}</script>";
 
 
 
