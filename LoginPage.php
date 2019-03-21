@@ -7,7 +7,7 @@ if (isset($_SESSION['loggedIn'])) {
 }
 else {
   if (isset($_SESSION['loginErrorMessage'])) {
-    $loginErrorMessage = $_SESSION['loginErrorMessage'];
+    $loginErrorMessage = "<br>$_SESSION['loginErrorMessage']<br>";
     unset($_SESSION['loginErrorMessage']);
   }
   else {
@@ -38,7 +38,7 @@ else {
         Password
         <input type="password" name="Password" Placeholder="your password here" onclick="checkInput()" id="Password" maxlength=128 required><br>
         </div>
-        <p style="color:red; font-size: 10px; text-align: center;"><?php echo "$loginErrorMessage"; ?> </p>
+        <p style="color:red; font-size: 35px; text-align: center;"><?php echo "$loginErrorMessage"; ?> </p>
          <input type="button" class="btn" onclick="showPassword()" value="Show Password" id="showPassBtn">
          <script type="text/javascript">
               function showPassword() {
