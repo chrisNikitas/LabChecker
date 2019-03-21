@@ -193,6 +193,11 @@ if ($_SESSION['navCurrentLab'] == $lab) {
         echo $item_to_echo;
     }
 }
+else {
+  echo "$_SESSION['navCurrentLab']";
+  echo "<br>";
+  echo "$lab";
+}
 
 
 
