@@ -119,6 +119,7 @@ else {
 
   function getData() {
 		$('#list_form').trigger("submit");
+
 /*
 		if (newLab == document.getElementById('hidden_selected_lab').value) {
 			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
@@ -126,7 +127,7 @@ else {
 		}*/
 	}
 
-	var keepGettingData = setInterval(getData, 5000);
+	var keepGettingData = setInterval(getData, 1200);
 </script>
 </body>
 </html>
