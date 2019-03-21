@@ -7,10 +7,8 @@ if (isset($_SESSION['loggedIn'])) {
 }
 else {
   if (isset($_SESSION['loginErrorMessage'])) {
-    $is_it_set = $_SESSION['loginErrorMessage'];
-  }
-  else {
-    $is_it_set = "Welcome to the website";
+    $loginErrorMessage = $_SESSION['loginErrorMessage'];
+    unset($_SESSION['loginErrorMessage']);
   }
 }
 
@@ -29,7 +27,6 @@ else {
     </div>
     <div class="form-box">
       <form action="Login.php" method="post" autocomplete="off">  <!--haven't made main page-->
-        <p><?php echo "$is_it_set"; ?> </p>
         <div class="textbox">
         Username
         <input type="text" name="Username" Placeholder="your username here" onclick="checkInput()" id="Username" maxlength=128 required><br>
@@ -38,7 +35,7 @@ else {
         Password
         <input type="password" name="Password" Placeholder="your password here" onclick="checkInput()" id="Password" maxlength=128 required><br>
         </div>
-
+        <p style="color:red; font-size: 50px;"><?php echo "$loginErrorMessage"; ?> </p>
          <input type="button" class="btn" onclick="showPassword()" value="Show Password" id="showPassBtn">
          <script type="text/javascript">
               function showPassword() {

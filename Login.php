@@ -31,12 +31,12 @@
              header("Location: index.php");
            }
            else {
-             //$noResults = "Username or password is wrong";
+             $noResults = "Username or password is incorrect";
              //echo "<script type='text/javascript'>alert('Username or password is wrong');</script>";
              //$dbConn->close();
 
              //session_start();
-             $_SESSION['loginErrorMessage'] = "Incorrect details!";
+             $_SESSION['loginErrorMessage'] = $noResults;
              header("Location: LoginPage.php");
 
              //die ('Incorrect details!');
