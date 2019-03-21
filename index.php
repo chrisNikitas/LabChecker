@@ -119,6 +119,11 @@ else {
 
   function getData() {
 		$('#list_form').trigger("submit");
+		var newLab = " <?php echo $_SESSION['navCurrentLab'] ?> ";
+		if (newLab == document.getElementById('hidden_selected_lab').value) {
+			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
+			document.getElementById('image').src="GreyLF31.png";
+		}
 	}
 
 	var keepGettingData = setInterval(getData, 5000);

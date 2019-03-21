@@ -10,6 +10,7 @@ $data_to_echo = array();
 $is_TA = $_SESSION['teacherBool'];
 
 $lab = $_POST['selected_lab'];
+$_SESSION['navCurrentLab'] = $lab;
 
 //echo "<h4>$lab</h4><br>";
 array_push($data_to_echo, "<h4>$lab</h4><br>");
@@ -186,7 +187,7 @@ else if ($lab == 'TOOTILL0' && !$is_TA) {
     //echo "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>";
     array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>");
 }
-
+/*
 $new_lab = $_SESSION['navCurrentLab'];
 if ($new_lab == $lab) {
     foreach($data_to_echo as $item_to_echo) {
@@ -198,7 +199,9 @@ else {
   echo "<br>";
   echo "$lab";
 }
-
-
+*/
+foreach($data_to_echo as $item_to_echo) {
+    echo $item_to_echo;
+}
 
 ?>
