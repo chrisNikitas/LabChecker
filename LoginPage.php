@@ -10,6 +10,9 @@ else {
     $loginErrorMessage = $_SESSION['loginErrorMessage'];
     unset($_SESSION['loginErrorMessage']);
   }
+  else {
+    $loginErrorMessage = "";
+  }
 }
 
 
