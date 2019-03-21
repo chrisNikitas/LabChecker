@@ -86,7 +86,7 @@ else {
 		document.getElementById('hidden_selected_lab').value = "LF31";
 		document.getElementById('image').src="GreyLF31.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-	  <?php $_SESSION['navCurrentLab'] = 'LF31'; ?>
+	  <?php /*$_SESSION['navCurrentLab'] = 'LF31';*/ ?>
 		//clearInveral(getData);
 		//var keepGettingData = setInterval(getData, 5000);
 		//getData();
@@ -98,7 +98,7 @@ else {
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
 		document.getElementById('image').src="GreyTootill0.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-		<?php $_SESSION['navCurrentLab'] = 'TOOTILL0'; ?>
+		<?php /*$_SESSION['navCurrentLab'] = 'TOOTILL0';*/ ?>
 		//clearInveral(getData);
 		//var keepGettingData = setInterval(getData, 5000);
 		//getData();
@@ -119,10 +119,12 @@ else {
 
   function getData() {
 		$('#list_form').trigger("submit");
+
 		var newLab = " <?php echo $_SESSION['navCurrentLab'] ?> ";
 		if (newLab == document.getElementById('hidden_selected_lab').value) {
 			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
 			document.getElementById('image').src="GreyLF31.png";
+			
 		}
 	}
 
