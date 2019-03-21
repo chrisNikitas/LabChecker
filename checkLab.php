@@ -5,13 +5,12 @@ session_start();
 require ("config.inc.php");
 $con = mysqli_connect($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
-$data_to_echo = array();
-
+//$data_to_echo = array();
 
 $is_TA = $_SESSION['teacherBool'];
 
 $lab = $_POST['selected_lab'];
-$_SESSION['navCurrentLab'] = $lab;
+
 
 echo "<h4>$lab</h4><br>";
 //array_push($data_to_echo, "<h4>$lab</h4><br>");
@@ -44,7 +43,7 @@ while ($query_row = mysqli_fetch_assoc($query)){
     $labs_array = explode(',', $labs);
 
     if ($labs_array[$array_index] == 'empty') {
-        echo "Computer no.<b>$computerID</b> is free<br>";
+        //echo "Computer no.<b>$computerID</b> is free<br>";
         //array_push($data_to_echo, "Computer no.<b>$computerID</b> is free<br>");
         $num_free_seats++;
     }
@@ -88,8 +87,6 @@ else {
           border:1px solid black; background: red;'></div></div>";
 }
 
-//echo "<div style='display:inline-block;'><div style='width:20px; height:20px; margin:5px; border:1px solid black; background: red'></div> - Unavailable seats</div>";
-
 
 
 
@@ -130,9 +127,12 @@ if ($is_TA) {
 }
 
 else {
-  if ($desired_lab != '-') {
-      echo "There is currently a scheduled lab in this room";
+  if ($desired_lab != '-' && $desired_lab == $_SESSION['labGroup']) {
+      echo "You currently have a lab in this room";
       //array_push($data_to_echo, "There is currently a scheduled lab in this room");
+  }
+  else if ($desired_lab != '-') {
+      echo "There is currently a scheduled lab in this room";
   }
   else {
       echo "There are no labs currently scheduled in this room";
@@ -151,7 +151,7 @@ echo "<br>";
 
 
 sleep(4);
-//usleep(4150000);
+
 
 $queryLF31Staff = "SELECT LF31 FROM base64Images WHERE Type = 'Staff'";
 $queryLF31Student = "SELECT LF31 FROM base64Images WHERE Type = 'Student'";
@@ -215,33 +215,12 @@ else if ($lab == 'TOOTILL0' && !$is_TA) {
     echo "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>";
     //array_push($data_to_echo, "<script>document.getElementById('image').src='Tootill0Student.png?'+d.getTime();</script>");
 }
-/*
-$new_lab = $_SESSION['navCurrentLab'];
-if ($new_lab == $lab) {
-    foreach($data_to_echo as $item_to_echo) {
-        echo $item_to_echo;
-    }
-}
-else {
-  echo "$new_lab";
-  echo "<br>";
-  echo "$lab";
-}
-*/
+
 /*
 foreach($data_to_echo as $item_to_echo) {
     echo "$item_to_echo";
 }
 */
-
-//echo "<script>var oldLab = $lab</script>";
-
-
-
-//echo "<script>setTimeout(checkSameLab, 500)</script>";
-
-//echo "<script>if (document.getElementById('hidden_selected_lab').value != <?php echo '$_SESSION['.'navCurrentLab'.']' ) { document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...'; }"
-
 echo "<script>if (oldLab != document.getElementById('hidden_selected_lab').value) {
 			document.getElementById('return_pc_data').innerHTML = 'Loading data from lab...';
 			if (document.getElementById('hidden_selected_lab').value == 'LF31') {

@@ -29,7 +29,7 @@ else {
       Sign in to Labchecker
     </div>
     <div class="form-box">
-      <form action="Login.php" method="post" autocomplete="off">  <!--haven't made main page-->
+      <form action="Login.php" method="post" autocomplete="off">
         <div class="textbox">
         Username
         <input type="text" name="Username" Placeholder="your username here" onclick="checkInput()" id="Username" maxlength=128 required><br>
@@ -50,16 +50,7 @@ else {
                 }
               }
         </script>
-<!--
-        <script type="text/javascript">
-              function checkInput() {
-                if (Username.value.length > 0 && Password.value.length > 0)
-                 document.getElementById('loginBtn').disabled = false;
-                else
-                 document.getElementById('loginBtn').disabled = true;
-                }
-        </script>-->
-        <!--<input type="submit" class="btn" value="Login" id="loginBtn" onclick="index.php">-->
+
         <input type="submit" class="btn" value="Login" id="loginBtn">
      </form>
     </div>

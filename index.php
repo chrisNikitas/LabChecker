@@ -41,7 +41,6 @@ else {
 			<div class="col-md-4 col-lg-3 border-right py-2" id="list">
 				<form id="list_form" method="POST">
 					<input type="hidden" id="hidden_selected_lab" name="hidden_selected_lab" value="LF31">
-					<!--<input type="submit" name="test_submit_button" value="test_submit_button" id="test_submit_button">-->
 				</form>
 				<h3>PC Listings</h3>
 				<hr>
@@ -86,10 +85,6 @@ else {
 		document.getElementById('hidden_selected_lab').value = "LF31";
 		document.getElementById('image').src="GreyLF31.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-
-		//clearInveral(getData);
-		//var keepGettingData = setInterval(getData, 5000);
-		//getData();
 	}
 	function SHOW_TOOTILL0() {
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
@@ -98,10 +93,6 @@ else {
 		document.getElementById('hidden_selected_lab').value = "TOOTILL0";
 		document.getElementById('image').src="GreyTootill0.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-
-		//clearInveral(getData);
-		//var keepGettingData = setInterval(getData, 5000);
-		//getData();
 	}
 	function SHOW_TOOTILL1() {
 		document.getElementById("button_LF31").className = "btn btn-light w-100";
@@ -110,36 +101,13 @@ else {
 		document.getElementById('hidden_selected_lab').value = "TOOTILL1";
 		document.getElementById('image').src="GreyTootill1.png";
 		document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-
-		//clearInveral(getData);
-		//var keepGettingData = setInterval(getData, 5000);
-		//getData();
 	}
 
 
   function getData() {
 		$('#list_form').trigger("submit");
-		/*
-    if (oldLab != document.getElementById('hidden_selected_lab').value) {
-			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-			if (document.getElementById('hidden_selected_lab').value == 'LF31') {
-				document.getElementById('image').src="GreyLF31.png";
-			}
-			if (document.getElementById('hidden_selected_lab').value == 'TOOTILL0') {
-				document.getElementById('image').src="GreyTootill0.png";
-			}
-			if (document.getElementById('hidden_selected_lab').value == 'TOOTILL1') {
-				document.getElementById('image').src="GreyTootill1.png";
-			}
-			//alert(oldLab);
-			oldLab = document.getElementById('hidden_selected_lab').value;
-		}*/
-/*
-		if (newLab == document.getElementById('hidden_selected_lab').value) {
-			document.getElementById('return_pc_data').innerHTML = "Loading data from lab...";
-			document.getElementById('image').src="GreyLF31.png";
-		}*/
 	}
+
   var oldLab = 'LF31';
 	var keepGettingData = setInterval(getData, 5000);
 </script>
