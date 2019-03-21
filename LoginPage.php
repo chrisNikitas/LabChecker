@@ -3,11 +3,11 @@
 
 session_start();
 if (isset($_SESSION['loggedIn'])) {
-  $is_it_set = "logged in";
+	header("Location: index.php");
 }
 else {
   if (isset($_SESSION['loginErrorMessage'])) {
-    $is_it_set = "Thats wrong!!";
+    $is_it_set = $_SESSION['loginErrorMessage'];
   }
   else {
     $is_it_set = "Welcome to the website";
