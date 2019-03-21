@@ -130,7 +130,7 @@ else {
 			if (document.getElementById('hidden_selected_lab').value == 'TOOTILL1') {
 				document.getElementById('image').src="GreyTootill1.png";
 			}
-			alert(oldLab);
+			//alert(oldLab);
 			oldLab = document.getElementById('hidden_selected_lab').value;
 		}
 /*
