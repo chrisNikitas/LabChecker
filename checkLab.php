@@ -63,12 +63,12 @@ else {
     //array_push($data_to_echo, "There are $num_free_seats free seats");
 }
 
-echo "<br><hr>";
+echo "<hr>";
 //array_push($data_to_echo, "<br><hr><br>");
 
 echo "<h4><u>Key</u></h4>";
 
-echo "<div>Available seats - <div style='width:20px; height:20px; margin:5px; border:1px solid black; background: green;'>
+echo "<div style='display:inline-block;'>Available seats - <div style='display:inline-block; width:20px; height:20px; margin:5px; border:1px solid black; background: green;'>
        </div></div>";
 
 //echo "<div style='display:inline-block;'><div style='width:20px; height:20px; margin:5px; border:1px solid black; background: red'></div> - Unavailable seats</div>";
