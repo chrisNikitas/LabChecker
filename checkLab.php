@@ -68,8 +68,11 @@ echo "<hr>";
 
 echo "<h4><u>Key</u></h4>";
 
-echo "<div style='display:inline-block;'>Available seats <div style='display:inline-block; width:20px; height:20px; margin:5px; margin-top:10px; border:1px solid black; background: green;'>
-       </div></div>";
+echo "<div style='display:inline-block;'>Available seats    <div style='display:inline-block; width:25px; height:25px; margin:5px;
+       border:1px solid black; background: green;'></div></div>";
+
+echo "<div style='display:inline-block;'>Unavailable seats    <div style='display:inline-block; width:25px; height:25px; margin:5px;
+      border:1px solid black; background: red;'></div></div>";
 
 //echo "<div style='display:inline-block;'><div style='width:20px; height:20px; margin:5px; border:1px solid black; background: red'></div> - Unavailable seats</div>";
 
