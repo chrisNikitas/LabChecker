@@ -3,7 +3,7 @@ body{
   padding: 0 0;
   font-family: sans-serif;
   background: url(bg.png) no-repeat;
-  animation: anim 30s linear infinite;
+  animation: anim 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite
 }
 
 .footer {
@@ -15,10 +15,6 @@ body{
 input::placeholder{
   color: #ffffff7f;
   text-shadow: 2px 2px 8px #0000007f;
-}
-
-.textbox input:-webkit-autofill{
-    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
 }
 
 .heading{
