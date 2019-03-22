@@ -27,7 +27,9 @@ else {
 	<link rel="stylesheet" type="text/css" href="labStyle.css">
 	</head>
 
-
+Cache-Control: private, must-revalidate, proxy-revalidate, s-maxage=0 
+Pragma: no-cache 
+Vary: *
 <body onload="getData()">
 
 	<nav class="navbar navbar-light bg-dark-transparent">
