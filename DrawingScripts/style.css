@@ -1,0 +1,176 @@
+body{
+  margin: 0 0;
+  padding: 0 0;
+  font-family: sans-serif;
+  background: url(bg.png) no-repeat;
+  animation: anim 30s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+input::placeholder{
+  color: #ffffff7f;
+  text-shadow: 2px 2px 8px #0000007f;
+}
+
+.heading{
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 0;
+  margin: 60px 30px;
+  margin-bottom: 90%;
+  text-shadow: 2px 2px 8px #0000007f;
+  font-family: sans-serif;
+  font-size: 72px;
+}
+
+.form-box{
+  text-shadow: 2px 2px 8px #0000007f;
+  width: 80%;
+  max-width: 600px;
+  font-size: 36px;
+  font-family: sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 50px 10px;
+  color: white;
+}
+
+.textbox{
+  width: 80%;
+  font-size: 32px;
+  padding: 8px 0;
+  margin: 8px 0;
+}
+
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  text-shadow: 2px 2px 8px #0000007f;
+  font-size: 18px;
+  width: 100%;
+  float: left;
+  margin: 20px 10px;
+}
+
+@keyframes animold {
+  0%{
+    background-position: 100% 50%;
+  }
+  3%{
+    background-position: 94% 40%;
+  }
+  13%{
+    background-position: 75% 20%;
+  }
+  25%{
+    background-position: 50% 0%;
+  }
+  37%{
+    background-position: 25% 20%;
+  }
+  47%{
+    background-position: 6% 40%;
+  }
+  50%{
+    background-position: 0% 50%;
+  }
+  53%{
+    background-position: 6% 60%;
+  }
+  63%{
+    background-position: 25% 70%;
+  }
+  75%{
+    background-position: 50% 100%;
+  }
+  90%{
+    background-position: 75% 70%;
+  }
+  97%{
+    background-position: 94% 60%;
+  }
+  100%{
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes anim {
+  0%{
+    background-position: 50% 70%
+  }
+  25%{
+    background-position: 90% 49%
+  }
+  50%{
+    background-position: 50% 28%
+  }
+  75%{
+    background-position: 10% 49%
+  }
+  100%{
+    background-position: 50% 70%
+  }
+}
+
+/* @keyframes anim {
+  0%{
+    background-position: 0% 0%
+  }
+  50%{
+    background-position: 50% 100%
+  }
+  100%{
+    background-position: 100% 0%
+  }
+  100%{
+    background-position: 50% 0%
+  }
+  100%{
+    background-position: 0% 0%
+  }
+} */
+
+.btn{
+  width: 100%;
+  background: none;
+  color: white;
+  padding: 5px;
+  border: 0px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-height: 950px) {
+  .heading {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .heading {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 800px) and (max-width: 650px) {
+  .heading {
+    display: none;
+  }
+}
